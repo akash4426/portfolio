@@ -23,11 +23,15 @@ router.post("/", async (req, res) => {
     };
 
     await transporter.sendMail(mailOptions);
-    console.log("✔ Email sent successfully");
+    console.log("✔ Email sent successfully to:", process.env.GMAIL_USER);
     res.json({ success: true, message: "Email sent successfully" });
   } catch (error) {
     console.error("Error sending email:", error);
-    res.status(500).json({ success: false, message: "Server error" });
+    res.status(500).json({
+      success: false,
+      message: "Server error: Failed to send email",
+      error: error.message // Send error message to client for debugging (remove in strict production if sensitive)
+    });
   }
 });
 

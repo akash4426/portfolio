@@ -14,7 +14,12 @@ export default function Contact() {
     setStatus("sending");
 
     try {
-      const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5001/api/contact";
+      // Use VITE_API_URL from env, or fallback to localhost for development
+      // IMPORTANT: On Render, ensure VITE_API_URL is set to your deployed server URL
+      const apiUrl = (import.meta.env.VITE_API_URL || "http://localhost:5001") + "/api/contact";
+
+      console.log("Sending message to:", apiUrl); // Debug log
+
       const response = await fetch(apiUrl, {
         method: "POST",
         headers: {
@@ -22,7 +27,6 @@ export default function Contact() {
         },
         body: JSON.stringify(form),
       });
-
       const data = await response.json();
 
       if (data.success) {
