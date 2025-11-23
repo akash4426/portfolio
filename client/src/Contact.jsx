@@ -15,8 +15,9 @@ export default function Contact() {
 
     try {
       // Use VITE_API_URL from env, or fallback to localhost for development
-      // IMPORTANT: On Render, ensure VITE_API_URL is set to your deployed server URL
-      const apiUrl = (import.meta.env.VITE_API_URL || "http://localhost:5001") + "/api/contact";
+      // Logic: Remove trailing slash from env var if present, then append /api/contact
+      const baseUrl = (import.meta.env.VITE_API_URL || "http://localhost:5001").replace(/\/$/, "");
+      const apiUrl = `${baseUrl}/api/contact`;
 
       console.log("Sending message to:", apiUrl); // Debug log
 
