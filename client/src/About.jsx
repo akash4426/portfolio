@@ -1,10 +1,9 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { label: "Years Experience", value: "3+", icon: "💼" },
-  { label: "Projects Completed", value: "15+", icon: "🚀" },
-  { label: "Technologies", value: "20+", icon: "⚡" },
-  { label: "Certifications", value: "5+", icon: "🏆" },
+  { label: "Years Experience", value: "1+", icon: "💼" },
+  { label: "Projects Completed", value: "10+", icon: "🚀" },
+  { label: "Technologies", value: "10+", icon: "⚡" },
 ];
 
 export default function About() {
@@ -63,7 +62,7 @@ export default function About() {
                 </div>
               </div>
               <h3 className="text-3xl font-bold text-white mb-2">Akash Karri</h3>
-              <p className="text-neon-blue font-semibold mb-4">Full-Stack Developer & Security Researcher</p>
+              <p className="text-neon-blue font-semibold mb-4">MERN-Stack Developer & AI/ML Enthusiast</p>
               <div className="flex gap-4 justify-center mt-6">
                 <a href="https://github.com/akash4426" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/10 hover:bg-neon-blue/20 border border-white/20 hover:border-neon-blue flex items-center justify-center transition-all">
                   <span className="text-xl">💻</span>
