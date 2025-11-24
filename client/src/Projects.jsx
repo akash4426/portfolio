@@ -8,6 +8,7 @@ const projects = [
     link: "https://github.com/akash4426",
     featured: true,
     gradient: "from-neon-blue to-neon-cyan",
+    image: "/images/projects/video-rag.png",
   },
   {
     title: "Document RAG System (Text & PDF) using FastAPI",
@@ -16,6 +17,7 @@ const projects = [
     link: "https://github.com/akash4426",
     featured: true,
     gradient: "from-neon-purple to-electric-violet",
+    image: "/images/projects/doc-rag.png",
   },
   {
     title: "Portfolio Website",
@@ -23,6 +25,7 @@ const projects = [
     tech: ["React", "Tailwind", "Framer Motion"],
     link: "#",
     gradient: "from-neon-cyan to-neon-blue",
+    image: "/images/projects/portfolio.png",
   },
   {
     title: "Federated Learning System",
@@ -30,6 +33,7 @@ const projects = [
     tech: ["Python", "PyTorch", "Flower"],
     link: "https://github.com/akash4426",
     gradient: "from-electric-violet to-neon-purple",
+    image: "/images/projects/federated-learning.png",
   },
   {
     title: "Threat Detection App",
@@ -37,6 +41,7 @@ const projects = [
     tech: ["Node.js", "osquery", "AI/ML"],
     link: "https://github.com/akash4426",
     gradient: "from-neon-pink to-neon-purple",
+    image: "/images/projects/threat-detection.png",
   },
 ];
 
@@ -69,12 +74,14 @@ export default function Projects() {
               whileHover={{ y: -8 }}
               className="glass-panel rounded-2xl border border-white/5 hover:border-neon-blue/50 transition-all duration-300 group overflow-hidden"
             >
-              {/* Project Image Placeholder */}
-              <div className={`h-48 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-6xl opacity-50 group-hover:opacity-70 transition-opacity">🚀</div>
-                </div>
+              {/* Project Image */}
+              <div className="h-48 relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                 <div className="absolute top-4 right-4">
                   <span className="px-3 py-1 text-xs font-bold rounded-full bg-white/20 backdrop-blur-sm text-white border border-white/30">
                     FEATURED
@@ -123,12 +130,14 @@ export default function Projects() {
               whileHover={{ y: -6 }}
               className="glass-panel rounded-2xl border border-white/5 hover:border-neon-purple/50 transition-all duration-300 group overflow-hidden"
             >
-              {/* Project Image Placeholder */}
-              <div className={`h-32 bg-gradient-to-br ${project.gradient} relative overflow-hidden`}>
-                <div className="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-all duration-300"></div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="text-4xl opacity-50 group-hover:opacity-70 transition-opacity">💡</div>
-                </div>
+              {/* Project Image */}
+              <div className="h-32 relative overflow-hidden">
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
               </div>
 
               <div className="p-6">

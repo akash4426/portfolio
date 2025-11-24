@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { EmailIcon, LinkedInIcon, GitHubIcon } from "./Icons";
 
 export default function Contact() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -40,6 +41,12 @@ export default function Contact() {
     }
   };
 
+  const contactMethods = [
+    { icon: <EmailIcon />, label: "Email", value: "akashkarri2006@gmail.com", link: "mailto:akashkarri2006@gmail.com" },
+    { icon: <LinkedInIcon />, label: "LinkedIn", value: "kakashreddy", link: "https://www.linkedin.com/in/kakashreddy" },
+    { icon: <GitHubIcon />, label: "GitHub", value: "akash4426", link: "https://github.com/akash4426" },
+  ];
+
   return (
     <section id="contact" className="py-24 px-6 relative">
       <div className="max-w-4xl mx-auto">
@@ -58,11 +65,7 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid md:grid-cols-3 gap-8 mb-12">
-          {[
-            { icon: "📧", label: "Email", value: "akashkarri2006@gmail.com", link: "mailto:akashkarri2006@gmail.com" },
-            { icon: "💼", label: "LinkedIn", value: "kakashreddy", link: "https://www.linkedin.com/in/kakashreddy" },
-            { icon: "💻", label: "GitHub", value: "akash4426", link: "https://github.com/akash4426" },
-          ].map((item, index) => (
+          {contactMethods.map((item, index) => (
             <motion.a
               key={index}
               href={item.link}
@@ -74,7 +77,7 @@ export default function Contact() {
               whileHover={{ y: -5 }}
               className="glass-panel p-6 rounded-xl border border-white/5 hover:border-neon-blue/30 transition-all text-center group"
             >
-              <div className="text-4xl mb-3 group-hover:scale-110 transition-transform">{item.icon}</div>
+              <div className="flex justify-center mb-3 group-hover:scale-110 transition-transform">{item.icon}</div>
               <div className="text-gray-400 text-sm mb-1">{item.label}</div>
               <div className="text-white font-semibold group-hover:text-neon-blue transition-colors">{item.value}</div>
             </motion.a>
@@ -133,8 +136,8 @@ export default function Contact() {
             type="submit"
             disabled={status === "sending"}
             className={`w-full p-5 rounded-xl font-bold text-white transition-all duration-300 relative overflow-hidden group ${status === "sending"
-                ? "bg-gray-600 cursor-not-allowed"
-                : "bg-gradient-to-r from-neon-blue to-neon-purple hover:shadow-neon-blue-lg"
+              ? "bg-gray-600 cursor-not-allowed"
+              : "bg-gradient-to-r from-neon-blue to-neon-purple hover:shadow-neon-blue-lg"
               }`}
           >
             <span className="relative z-10">

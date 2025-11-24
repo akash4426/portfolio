@@ -1,40 +1,46 @@
 import { motion } from "framer-motion";
+import {
+  PythonIcon, JavaScriptIcon, CppIcon, JavaIcon,
+  BrainIcon, FireIcon, LockIcon, BookIcon,
+  ReactIcon, NodeIcon, MongoIcon, LightningIcon,
+  ShieldIcon, SearchIcon, DockerIcon, GitIcon
+} from "./Icons";
 
 const skillCategories = [
   {
     category: "Programming Languages",
     skills: [
-      { name: "Python", level: 95, icon: "🐍" },
-      { name: "JavaScript", level: 90, icon: "⚡" },
-      { name: "C++", level: 85, icon: "⚙️" },
-      { name: "Java", level: 80, icon: "☕" },
+      { name: "Python", level: 95, icon: <PythonIcon /> },
+      { name: "JavaScript", level: 90, icon: <JavaScriptIcon /> },
+      { name: "C++", level: 85, icon: <CppIcon /> },
+      { name: "Java", level: 80, icon: <JavaIcon /> },
     ],
   },
   {
     category: "AI/ML & Data Science",
     skills: [
-      { name: "TensorFlow", level: 90, icon: "🧠" },
-      { name: "PyTorch", level: 88, icon: "🔥" },
-      { name: "Federated Learning", level: 85, icon: "🔐" },
-      { name: "RAG Systems", level: 92, icon: "📚" },
+      { name: "TensorFlow", level: 90, icon: <BrainIcon /> },
+      { name: "PyTorch", level: 88, icon: <FireIcon /> },
+      { name: "Federated Learning", level: 85, icon: <LockIcon /> },
+      { name: "RAG Systems", level: 92, icon: <BookIcon /> },
     ],
   },
   {
     category: "Web Development",
     skills: [
-      { name: "React", level: 92, icon: "⚛️" },
-      { name: "Node.js", level: 88, icon: "💚" },
-      { name: "MongoDB", level: 85, icon: "🍃" },
-      { name: "FastAPI", level: 90, icon: "⚡" },
+      { name: "React", level: 92, icon: <ReactIcon /> },
+      { name: "Node.js", level: 88, icon: <NodeIcon /> },
+      { name: "MongoDB", level: 85, icon: <MongoIcon /> },
+      { name: "FastAPI", level: 90, icon: <LightningIcon /> },
     ],
   },
   {
     category: "Cybersecurity & Tools",
     skills: [
-      { name: "Network Security", level: 87, icon: "🛡️" },
-      { name: "Penetration Testing", level: 82, icon: "🔍" },
-      { name: "Docker", level: 85, icon: "🐳" },
-      { name: "Git", level: 93, icon: "📦" },
+      { name: "Network Security", level: 87, icon: <ShieldIcon /> },
+      { name: "Penetration Testing", level: 82, icon: <SearchIcon /> },
+      { name: "Docker", level: 85, icon: <DockerIcon /> },
+      { name: "Git", level: 93, icon: <GitIcon /> },
     ],
   },
 ];
@@ -80,7 +86,7 @@ export default function Skills() {
                   >
                     <div className="flex items-center justify-between mb-2">
                       <div className="flex items-center gap-3">
-                        <span className="text-2xl">{skill.icon}</span>
+                        <div className="flex-shrink-0">{skill.icon}</div>
                         <span className="text-gray-200 font-semibold">{skill.name}</span>
                       </div>
                       <span className="text-neon-blue font-mono text-sm font-bold">{skill.level}%</span>
