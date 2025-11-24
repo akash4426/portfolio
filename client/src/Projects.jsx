@@ -5,7 +5,7 @@ const projects = [
     title: "Video RAG System (CLIP + Gemini + FastAPI)",
     description: "Developed a multimodal Retrieval-Augmented Generation system that extracts embeddings from video frames using CLIP and performs intelligent video-based QA using Gemini. Supports text, frame-level search, and semantic video understanding.",
     tech: ["CLIP", "Gemini", "Python", "FastAPI", "RAG", "Embeddings"],
-    link: "https://github.com/akash4426",
+    link: "https://videorag-in9agcr2rynefnchvpwflz.streamlit.app/",
     featured: true,
     gradient: "from-neon-blue to-neon-cyan",
     image: "/images/projects/video-rag.png",
