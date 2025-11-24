@@ -10,37 +10,37 @@ const skillCategories = [
   {
     category: "Programming Languages",
     skills: [
-      { name: "Python", level: 95, icon: <PythonIcon /> },
-      { name: "JavaScript", level: 90, icon: <JavaScriptIcon /> },
-      { name: "C++", level: 85, icon: <CppIcon /> },
-      { name: "Java", level: 80, icon: <JavaIcon /> },
+      { name: "Python", level: 80, icon: <PythonIcon /> },
+      { name: "JavaScript", level: 75, icon: <JavaScriptIcon /> },
+      { name: "C++", level: 70, icon: <CppIcon /> },
+      { name: "Java", level: 75, icon: <JavaIcon /> },
     ],
   },
   {
     category: "AI/ML & Data Science",
     skills: [
-      { name: "TensorFlow", level: 90, icon: <BrainIcon /> },
-      { name: "PyTorch", level: 88, icon: <FireIcon /> },
-      { name: "Federated Learning", level: 85, icon: <LockIcon /> },
-      { name: "RAG Systems", level: 92, icon: <BookIcon /> },
+      { name: "TensorFlow", level: 70, icon: <BrainIcon /> },
+      { name: "PyTorch", level: 75, icon: <FireIcon /> },
+      { name: "Federated Learning", level: 80, icon: <LockIcon /> },
+      { name: "RAG Systems", level: 85, icon: <BookIcon /> },
     ],
   },
   {
     category: "Web Development",
     skills: [
-      { name: "React", level: 92, icon: <ReactIcon /> },
-      { name: "Node.js", level: 88, icon: <NodeIcon /> },
-      { name: "MongoDB", level: 85, icon: <MongoIcon /> },
-      { name: "FastAPI", level: 90, icon: <LightningIcon /> },
+      { name: "React", level: 83, icon: <ReactIcon /> },
+      { name: "Node.js", level: 70, icon: <NodeIcon /> },
+      { name: "MongoDB", level: 70, icon: <MongoIcon /> },
+      { name: "FastAPI", level: 75, icon: <LightningIcon /> },
     ],
   },
   {
     category: "Cybersecurity & Tools",
     skills: [
-      { name: "Network Security", level: 87, icon: <ShieldIcon /> },
-      { name: "Penetration Testing", level: 82, icon: <SearchIcon /> },
-      { name: "Docker", level: 85, icon: <DockerIcon /> },
-      { name: "Git", level: 93, icon: <GitIcon /> },
+      { name: "Network Security", level: 60, icon: <ShieldIcon /> },
+      { name: "Penetration Testing", level: 65, icon: <SearchIcon /> },
+      { name: "Docker", level: 70, icon: <DockerIcon /> },
+      { name: "Git", level: 90, icon: <GitIcon /> },
     ],
   },
 ];
