@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
 
 :root {
   font-family: 'Outfit', sans-serif;
@@ -22,48 +22,148 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-  background: radial-gradient(circle at 50% 50%, #1a1a2e 0%, #000000 100%);
+  background: #000000;
+  background-image: 
+    radial-gradient(circle at 20% 50%, rgba(0, 243, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(188, 19, 254, 0.08) 0%, transparent 50%),
+    linear-gradient(rgba(0, 243, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 243, 255, 0.03) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 50px 50px, 50px 50px;
+  background-position: 0 0, 0 0, 0 0, 0 0;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
   background: #0a0a0a;
+  border-left: 1px solid rgba(0, 243, 255, 0.1);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
-  border-radius: 4px;
+  background: linear-gradient(180deg, #00f3ff 0%, #bc13fe 100%);
+  border-radius: 10px;
+  border: 2px solid #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #00f3ff;
+  background: linear-gradient(180deg, #00d9ff 0%, #a010e0 100%);
+  box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
 }
 
 /* Glassmorphism Utilities */
 .glass-panel {
   background: rgba(255, 255, 255, 0.03);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
 }
 
+.glass-panel-hover {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 12px 40px 0 rgba(0, 243, 255, 0.2);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.5);
+}
+
+/* Text Gradients */
 .text-gradient {
-  background: linear-gradient(to right, #00f3ff, #bc13fe);
+  background: linear-gradient(135deg, #00f3ff 0%, #bc13fe 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
+.text-gradient-blue {
+  background: linear-gradient(135deg, #00f3ff 0%, #00d9ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.text-gradient-purple {
+  background: linear-gradient(135deg, #bc13fe 0%, #8b00ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glow Effects */
+.glow-blue {
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.4),
+              0 0 40px rgba(0, 243, 255, 0.2);
+}
+
+.glow-purple {
+  box-shadow: 0 0 20px rgba(188, 19, 254, 0.4),
+              0 0 40px rgba(188, 19, 254, 0.2);
+}
+
+/* Hover Glow */
+.hover-glow-blue:hover {
+  box-shadow: 0 0 30px rgba(0, 243, 255, 0.6),
+              0 0 60px rgba(0, 243, 255, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+.hover-glow-purple:hover {
+  box-shadow: 0 0 30px rgba(188, 19, 254, 0.6),
+              0 0 60px rgba(188, 19, 254, 0.3);
+  transition: box-shadow 0.3s ease;
+}
+
+/* Typography */
 h1, h2, h3 {
   letter-spacing: -0.02em;
+  font-weight: 700;
 }
 
+.font-mono {
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Buttons */
 button {
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Animations */
+@keyframes gradient-shift {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Selection */
+::selection {
+  background: rgba(0, 243, 255, 0.3);
+  color: #ffffff;
+}
+
+::-moz-selection {
+  background: rgba(0, 243, 255, 0.3);
+  color: #ffffff;
 }
 
 
