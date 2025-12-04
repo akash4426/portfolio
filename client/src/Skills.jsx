@@ -8,28 +8,28 @@ import {
 
 const skills = {
   "Neural Networks": [
-    { name: "TensorFlow", level: 90 },
-    { name: "PyTorch", level: 85 },
+    { name: "TensorFlow", level: 76 },
+    { name: "PyTorch", level: 75 },
     { name: "Keras", level: 80 },
-    { name: "Scikit-learn", level: 95 },
+    { name: "Scikit-learn", level: 88 },
   ],
   "Cyber Defense": [
-    { name: "Network Security", level: 90 },
-    { name: "Ethical Hacking", level: 85 },
-    { name: "Cryptography", level: 80 },
-    { name: "Threat Analysis", level: 85 },
+    { name: "Network Security", level: 85 },
+    { name: "Ethical Hacking", level: 70 },
+    { name: "Cryptography", level: 76 },
+    { name: "Threat Analysis", level: 80 },
   ],
   "Full Stack Core": [
-    { name: "React.js", level: 95 },
-    { name: "Node.js", level: 90 },
-    { name: "MongoDB", level: 85 },
-    { name: "Express", level: 90 },
+    { name: "React.js", level: 86 },
+    { name: "Node.js", level: 74 },
+    { name: "MongoDB", level: 80 },
+    { name: "Express", level: 77 },
   ],
   "Languages": [
-    { name: "Python", level: 98 },
-    { name: "JavaScript", level: 95 },
+    { name: "Python", level: 88 },
+    { name: "JavaScript", level: 78 },
     { name: "C++", level: 80 },
-    { name: "SQL", level: 85 },
+    { name: "SQL", level: 83 },
   ],
 };
 
