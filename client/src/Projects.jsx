@@ -34,10 +34,10 @@ const projects = [
     category: "Privacy AI"
   },
   {
-    title: "Threat Detection App",
-    description: "Real-time security threat detection using osquery and AI to monitor system events and identify potential security breaches.",
-    tech: ["Node.js", "osquery", "AI/ML"],
-    link: "https://github.com/akash4426",
+    title: "Phishing URL Detector",
+    description: "Phishing URL detector using Python and Machine Learning to monitor system events and identify potential security breaches.",
+    tech: ["Python", "Machine Learning"],
+    link: "https://github.com/akash4426/Phishing_Links",
     image: "/images/projects/threat-detection.png",
     category: "Security"
   },
