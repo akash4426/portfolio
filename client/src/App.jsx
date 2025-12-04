@@ -1,10 +1,73 @@
-import { motion } from "framer-motion";
+import { motion, useMotionValue, useTransform, useSpring } from "framer-motion";
 import Navbar from "./Navbar";
 import About from "./About";
 import Skills from "./Skills";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Projects from "./Projects";
+
+function NeuralCore() {
+  const x = useMotionValue(0);
+  const y = useMotionValue(0);
+
+  const mouseX = useSpring(x, { stiffness: 150, damping: 15 });
+  const mouseY = useSpring(y, { stiffness: 150, damping: 15 });
+
+  const rotateX = useTransform(mouseY, [-0.5, 0.5], ["15deg", "-15deg"]);
+  const rotateY = useTransform(mouseX, [-0.5, 0.5], ["-15deg", "15deg"]);
+
+  function handleMouseMove({ currentTarget, clientX, clientY }) {
+    const { left, top, width, height } = currentTarget.getBoundingClientRect();
+    const xPct = (clientX - left) / width - 0.5;
+    const yPct = (clientY - top) / height - 0.5;
+    x.set(xPct);
+    y.set(yPct);
+  }
+
+  function handleMouseLeave() {
+    x.set(0);
+    y.set(0);
+  }
+
+  return (
+    <motion.div
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      transition={{ duration: 1, type: "spring" }}
+      className="relative w-64 h-64 mx-auto mb-12 cursor-pointer perspective-1000"
+      onMouseMove={handleMouseMove}
+      onMouseLeave={handleMouseLeave}
+    >
+      <motion.div
+        style={{
+          rotateX,
+          rotateY,
+          transformStyle: "preserve-3d",
+        }}
+        className="w-full h-full relative"
+      >
+        {/* Glowing Backdrop */}
+        <div className="absolute inset-0 bg-gradient-to-r from-neural-blue/30 to-synapse-purple/30 rounded-full blur-[60px] animate-pulse-slow" />
+
+        {/* Interactive Image */}
+        <motion.div
+          className="w-full h-full relative z-10"
+          style={{ transform: "translateZ(50px)" }}
+        >
+          <img
+            src="/images/neural-core.png"
+            alt="Neural Core"
+            className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(0,243,255,0.5)]"
+          />
+
+          {/* Orbital Rings */}
+          <div className="absolute inset-0 border border-neural-blue/30 rounded-full animate-spin-slow" style={{ transform: "scale(1.2) rotateX(60deg)" }}></div>
+          <div className="absolute inset-0 border border-synapse-purple/30 rounded-full animate-spin-reverse-slow" style={{ transform: "scale(1.4) rotateY(60deg)" }}></div>
+        </motion.div>
+      </motion.div>
+    </motion.div>
+  );
+}
 
 export default function App() {
   return (
@@ -25,19 +88,7 @@ export default function App() {
         <div className="relative z-10 w-full max-w-5xl text-center">
 
           {/* Central Core Visualization */}
-          <motion.div
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 1, type: "spring" }}
-            className="w-32 h-32 mx-auto mb-12 relative"
-          >
-            <div className="absolute inset-0 rounded-full border-2 border-neural-blue/30 animate-spin-slow"></div>
-            <div className="absolute inset-2 rounded-full border-2 border-synapse-purple/30 animate-spin-reverse-slow"></div>
-            <div className="absolute inset-0 rounded-full bg-gradient-to-br from-neural-blue/20 to-synapse-purple/20 blur-xl animate-pulse"></div>
-            <div className="absolute inset-0 flex items-center justify-center">
-              <span className="text-4xl">🧠</span>
-            </div>
-          </motion.div>
+          <NeuralCore />
 
           <motion.div
             initial={{ opacity: 0, y: 20 }}
