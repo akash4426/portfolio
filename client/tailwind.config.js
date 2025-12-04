@@ -7,58 +7,46 @@ export default {
   theme: {
     extend: {
       colors: {
-        "cyber-green": "#00ff41",
-        "cyber-blue": "#008F11", // Matrix dark green
+        "neural-blue": "#00f3ff",
+        "synapse-purple": "#bc13fe",
+        "deep-mind": "#050510", // Darker, bluer background
+        "ai-cyan": "#00d9ff",
+        "cyber-green": "#00ff41", // Keep as accent for security
         "alert-red": "#ff0000",
-        "matrix-black": "#0d0208",
-        "neon-blue": "#00f3ff",
-        "neon-purple": "#bc13fe",
-        "deep-space": "#050505",
-        "terminal-green": "#4af626",
-        "terminal-dim": "rgba(74, 246, 38, 0.1)",
       },
       fontFamily: {
-        mono: ['"Share Tech Mono"', '"Fira Code"', 'monospace'],
         sans: ['"Outfit"', 'sans-serif'],
+        mono: ['"Share Tech Mono"', '"Fira Code"', 'monospace'],
       },
       backgroundImage: {
-        'grid-pattern': 'linear-gradient(rgba(0, 255, 65, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(0, 255, 65, 0.05) 1px, transparent 1px)',
-        'scanline': 'linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2))',
+        'neural-grid': 'radial-gradient(circle, rgba(0, 243, 255, 0.1) 1px, transparent 1px)',
+        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
       },
       animation: {
-        "spin-slow": "spin 10s linear infinite",
-        "glitch": "glitch 1s linear infinite",
-        "scanline": "scanline 8s linear infinite",
-        "typing": "typing 3.5s steps(40, end)",
-        "blink": "blink .75s step-end infinite",
-        "pulse-glow": "pulse-glow 2s infinite",
+        "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+        "float": "float 6s ease-in-out infinite",
+        "float-delayed": "float 6s ease-in-out 3s infinite",
+        "glow": "glow 2s ease-in-out infinite",
+        "spin-slow": "spin 12s linear infinite",
+        "spin-reverse-slow": "spin-reverse 15s linear infinite",
       },
       keyframes: {
-        glitch: {
-          "2%, 64%": { transform: "translate(2px,0) skew(0deg)" },
-          "4%, 60%": { transform: "translate(-2px,0) skew(0deg)" },
-          "62%": { transform: "translate(0,0) skew(5deg)" },
+        float: {
+          "0%, 100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-20px)" },
         },
-        scanline: {
-          "0%": { backgroundPosition: "0% 0%" },
-          "100%": { backgroundPosition: "0% 100%" },
+        glow: {
+          "0%, 100%": { filter: "drop-shadow(0 0 5px rgba(0, 243, 255, 0.5))" },
+          "50%": { filter: "drop-shadow(0 0 20px rgba(0, 243, 255, 0.8))" },
         },
-        typing: {
-          "from": { width: "0" },
-          "to": { width: "100%" },
-        },
-        blink: {
-          "from, to": { borderColor: "transparent" },
-          "50%": { borderColor: "#00ff41" },
-        },
-        "pulse-glow": {
-          "0%, 100%": { opacity: "1", boxShadow: "0 0 30px rgba(0, 243, 255, 0.6)" },
-          "50%": { opacity: "0.7", boxShadow: "0 0 15px rgba(0, 243, 255, 0.4)" },
+        "spin-reverse": {
+          "from": { transform: "rotate(360deg)" },
+          "to": { transform: "rotate(0deg)" },
         },
       },
       boxShadow: {
-        'neon-green': '0 0 10px #00ff41, 0 0 20px #00ff41',
-        'neon-blue': '0 0 10px #00f3ff, 0 0 20px #00f3ff',
+        'neural': '0 0 20px rgba(0, 243, 255, 0.3), 0 0 40px rgba(188, 19, 254, 0.2)',
+        'neural-strong': '0 0 30px rgba(0, 243, 255, 0.5), 0 0 60px rgba(188, 19, 254, 0.3)',
       },
     },
   },

@@ -1,140 +1,86 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
-
-const stats = [
-  { label: "YEARS_EXP", value: "01+", icon: "⚡" },
-  { label: "PROJECTS_COMPLETED", value: "10+", icon: "📂" },
-  { label: "TECH_STACK", value: "10+", icon: "💻" },
-  { label: "CERTIFICATIONS", value: "02+", icon: "🎖" },
-];
-
-const DecryptText = ({ text }) => {
-  const [displayText, setDisplayText] = useState("");
-
-  useEffect(() => {
-    let iteration = 0;
-    const interval = setInterval(() => {
-      setDisplayText(text.split("").map((letter, index) => {
-        if (index < iteration) {
-          return text[index];
-        }
-        return String.fromCharCode(65 + Math.floor(Math.random() * 26));
-      }).join(""));
-
-      if (iteration >= text.length) {
-        clearInterval(interval);
-      }
-      iteration += 1 / 3;
-    }, 30);
-    return () => clearInterval(interval);
-  }, [text]);
-
-  return <span>{displayText}</span>;
-};
 
 export default function About() {
   return (
     <section id="about" className="py-24 px-6 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-cyber-green/5 skew-x-12 border-l border-cyber-green/10"></div>
-      <div className="absolute bottom-0 left-0 w-1/3 h-full bg-cyber-blue/5 -skew-x-12 border-r border-cyber-blue/10"></div>
-
       <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
-          initial={{ opacity: 0, x: -50 }}
-          whileInView={{ opacity: 1, x: 0 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="mb-16 flex items-center gap-4"
+          className="grid md:grid-cols-2 gap-16 items-center"
         >
-          <div className="w-12 h-1 bg-cyber-green"></div>
-          <h2 className="text-4xl md:text-5xl font-bold font-mono text-cyber-green">
-            <DecryptText text="SYSTEM_DOSSIER" />
-          </h2>
-        </motion.div>
+          {/* Visual Model Architecture */}
+          <div className="relative">
+            <div className="absolute inset-0 bg-gradient-to-r from-neural-blue/20 to-synapse-purple/20 blur-3xl rounded-full"></div>
+            <div className="glass-card p-8 rounded-3xl border border-white/10 relative overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neural-blue to-synapse-purple"></div>
 
-        <div className="grid md:grid-cols-2 gap-12 items-start">
-          {/* Profile Card */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8 }}
-            className="relative group"
-          >
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyber-green to-cyber-blue rounded-lg blur opacity-25 group-hover:opacity-75 transition duration-1000 group-hover:duration-200"></div>
-            <div className="relative bg-black border border-cyber-green/30 p-1 rounded-lg">
-              <div className="aspect-square relative overflow-hidden rounded bg-deep-space flex items-center justify-center">
-                <div className="absolute inset-0 bg-scanline opacity-50 pointer-events-none"></div>
-                <div className="w-48 h-48 rounded-full border-4 border-cyber-green/20 flex items-center justify-center relative">
-                  <div className="absolute inset-0 border-t-4 border-cyber-green rounded-full animate-spin-slow"></div>
-                  <span className="text-6xl font-bold text-cyber-green font-mono">AK</span>
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-neural-blue to-synapse-purple flex items-center justify-center text-2xl font-bold text-white shadow-lg">
+                  AK
                 </div>
-
-                {/* HUD Elements */}
-                <div className="absolute top-4 left-4 text-xs font-mono text-cyber-green/60">
-                  ID: 9483-XJ<br />
-                  STATUS: ACTIVE
-                </div>
-                <div className="absolute bottom-4 right-4 text-xs font-mono text-cyber-green/60 text-right">
-                  LOC: UNKNOWN<br />
-                  ENC: AES-256
+                <div>
+                  <h3 className="text-xl font-bold text-white">Model Architecture</h3>
+                  <p className="text-sm text-gray-400 font-mono">v2.4.0 (Stable)</p>
                 </div>
               </div>
 
-              <div className="p-6 border-t border-cyber-green/30 bg-cyber-green/5">
-                <h3 className="text-2xl font-bold text-white font-mono mb-1">AKASH KARRI</h3>
-                <p className="text-cyber-green font-mono text-sm">FULL_STACK_OPERATIVE</p>
-
-                <div className="flex gap-4 mt-6 justify-center">
-                  <a href="https://github.com/akash4426" target="_blank" rel="noopener noreferrer" className="p-2 border border-cyber-green/50 text-cyber-green hover:bg-cyber-green hover:text-black transition-all">
-                    GITHUB_UPLINK
-                  </a>
-                  <a href="https://www.linkedin.com/in/kakashreddy" target="_blank" rel="noopener noreferrer" className="p-2 border border-cyber-green/50 text-cyber-green hover:bg-cyber-green hover:text-black transition-all">
-                    LINKEDIN_NODE
-                  </a>
+              <div className="space-y-4 font-mono text-sm">
+                <div className="flex justify-between items-center p-3 rounded-lg bg-white/5 border border-white/5">
+                  <span className="text-gray-400">Architecture:</span>
+                  <span className="text-neural-blue">Hybrid (AI + Security)</span>
+                </div>
+                <div className="flex justify-between items-center p-3 rounded-lg bg-white/5 border border-white/5">
+                  <span className="text-gray-400">Learning Rate:</span>
+                  <span className="text-synapse-purple">Exponential</span>
+                </div>
+                <div className="flex justify-between items-center p-3 rounded-lg bg-white/5 border border-white/5">
+                  <span className="text-gray-400">Optimization:</span>
+                  <span className="text-green-400">Continuous</span>
                 </div>
               </div>
-            </div>
-          </motion.div>
 
-          {/* Bio Content */}
-          <div className="space-y-8">
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="bg-black/50 border border-cyber-green/20 p-8 rounded-lg relative overflow-hidden"
-            >
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyber-green to-transparent opacity-50"></div>
-
-              <p className="text-gray-300 font-mono text-lg leading-relaxed mb-6">
-                <span className="text-cyber-green">&gt;</span> Subject is a highly skilled developer with a focus on <span className="text-white bg-cyber-green/20 px-1">Federated Learning</span> and <span className="text-white bg-cyber-green/20 px-1">AI/ML Security</span>.
-              </p>
-              <p className="text-gray-300 font-mono text-lg leading-relaxed mb-6">
-                <span className="text-cyber-green">&gt;</span> Current mission involves architecting robust full-stack applications and identifying system vulnerabilities.
-              </p>
-              <p className="text-gray-400 font-mono text-sm border-l-2 border-cyber-green/50 pl-4">
-                "Continuous adaptation is the only defense against obsolescence."
-              </p>
-            </motion.div>
-
-            {/* Stats Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ delay: index * 0.1, duration: 0.5 }}
-                  className="bg-cyber-green/5 border border-cyber-green/20 p-4 hover:bg-cyber-green/10 transition-all group"
-                >
-                  <div className="text-2xl mb-2 group-hover:scale-110 transition-transform duration-300">{stat.icon}</div>
-                  <div className="text-2xl font-bold text-cyber-green font-mono">{stat.value}</div>
-                  <div className="text-xs text-cyber-green/60 font-mono tracking-wider">{stat.label}</div>
-                </motion.div>
-              ))}
+              <div className="mt-6 pt-6 border-t border-white/10">
+                <div className="flex justify-between text-xs text-gray-500 mb-2">
+                  <span>TRAINING_PROGRESS</span>
+                  <span>98%</span>
+                </div>
+                <div className="h-1.5 w-full bg-white/10 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-neural-blue to-synapse-purple w-[98%]"></div>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+
+          {/* Text Content */}
+          <div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              About The <span className="text-gradient-ai">Model</span>
+            </h2>
+
+            <p className="text-gray-400 text-lg leading-relaxed mb-6">
+              I am a <span className="text-white font-semibold">Cybersecurity Analyst</span> and <span className="text-white font-semibold">AI Engineer</span> trained on a diverse dataset of full-stack development, machine learning algorithms, and security protocols.
+            </p>
+
+            <p className="text-gray-400 text-lg leading-relaxed mb-8">
+              My objective function is to build secure, intelligent systems that solve complex real-world problems. I specialize in <span className="text-neural-blue">Federated Learning</span> for privacy-preserving AI and developing robust defense mechanisms against evolving digital threats.
+            </p>
+
+            <div className="grid grid-cols-2 gap-4">
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-neural-blue/30 transition-colors">
+                <div className="text-3xl mb-2">🎓</div>
+                <div className="font-bold text-white">Student</div>
+                <div className="text-xs text-gray-500">Constant Learning</div>
+              </div>
+              <div className="p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-synapse-purple/30 transition-colors">
+                <div className="text-3xl mb-2">🔬</div>
+                <div className="font-bold text-white">Researcher</div>
+                <div className="text-xs text-gray-500">Innovation Focused</div>
+              </div>
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
