@@ -49,20 +49,52 @@ function NeuralCore() {
         {/* Glowing Backdrop */}
         <div className="absolute inset-0 bg-gradient-to-r from-neural-blue/30 to-synapse-purple/30 rounded-full blur-[60px] animate-pulse-slow" />
 
-        {/* Interactive Image */}
+        {/* Interactive Holographic Core */}
         <motion.div
-          className="w-full h-full relative z-10"
+          className="w-full h-full relative z-10 flex items-center justify-center"
           style={{ transform: "translateZ(50px)" }}
         >
-          <img
-            src="/images/neural-core.png"
-            alt="Neural Core"
-            className="w-full h-full object-contain drop-shadow-[0_0_30px_rgba(0,243,255,0.5)]"
-          />
+          {/* Core Glow */}
+          <div className="absolute w-32 h-32 bg-neural-blue/20 rounded-full blur-2xl animate-pulse-slow"></div>
+          <div className="absolute w-20 h-20 bg-white/50 rounded-full blur-xl animate-pulse"></div>
 
-          {/* Orbital Rings */}
-          <div className="absolute inset-0 border border-neural-blue/30 rounded-full animate-spin-slow" style={{ transform: "scale(1.2) rotateX(60deg)" }}></div>
-          <div className="absolute inset-0 border border-synapse-purple/30 rounded-full animate-spin-reverse-slow" style={{ transform: "scale(1.4) rotateY(60deg)" }}></div>
+          {/* Inner Reactor */}
+          <div className="relative w-40 h-40 preserve-3d">
+            {/* Rotating Data Rings */}
+            {[...Array(3)].map((_, i) => (
+              <motion.div
+                key={i}
+                className={`absolute inset-0 border-2 border-dashed rounded-full ${i % 2 === 0 ? 'border-neural-blue/40' : 'border-synapse-purple/40'}`}
+                animate={{ rotate: 360 }}
+                transition={{ duration: 10 + i * 5, repeat: Infinity, ease: "linear", repeatType: "loop" }}
+                style={{ rotateX: i * 45, rotateY: i * 30 }}
+              />
+            ))}
+
+            {/* Orbital Particles */}
+            <motion.div
+              className="absolute inset-0 rounded-full border border-neural-blue/20"
+              animate={{ rotate: -360 }}
+              transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+              style={{ rotateX: 60 }}
+            >
+              <div className="absolute top-0 left-1/2 w-2 h-2 bg-neural-blue rounded-full shadow-[0_0_10px_#00f3ff]"></div>
+            </motion.div>
+
+            <motion.div
+              className="absolute inset-0 rounded-full border border-synapse-purple/20"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
+              style={{ rotateY: 60 }}
+            >
+              <div className="absolute bottom-0 left-1/2 w-2 h-2 bg-synapse-purple rounded-full shadow-[0_0_10px_#bc13fe]"></div>
+            </motion.div>
+
+            {/* Central Node */}
+            <div className="absolute inset-0 m-auto w-16 h-16 bg-gradient-to-br from-neural-blue to-synapse-purple rounded-full opacity-80 backdrop-blur-sm border border-white/20 shadow-neural-strong flex items-center justify-center">
+              <div className="w-full h-full rounded-full bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20"></div>
+            </div>
+          </div>
         </motion.div>
       </motion.div>
     </motion.div>
