@@ -47,19 +47,23 @@ const skillCategories = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6 relative bg-gradient-to-b from-black/20 to-transparent">
-      <div className="max-w-7xl mx-auto">
+    <section id="skills" className="py-24 px-6 relative bg-black">
+      {/* Grid Background */}
+      <div className="absolute inset-0 bg-grid-pattern opacity-10"></div>
+
+      <div className="max-w-7xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           className="text-center mb-20"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-6">
-            Technical <span className="text-gradient-purple">Expertise</span>
+          <h2 className="text-4xl md:text-5xl font-bold font-mono text-white mb-4">
+            SYSTEM_<span className="text-cyber-green">CAPABILITIES</span>
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
-            A comprehensive toolkit spanning cybersecurity, AI/ML, and full-stack development
+          <div className="h-1 w-24 bg-cyber-green mx-auto"></div>
+          <p className="text-cyber-green/60 font-mono mt-4">
+            // LOADING_MODULES...
           </p>
         </motion.div>
 
@@ -67,70 +71,64 @@ export default function Skills() {
           {skillCategories.map((category, categoryIndex) => (
             <motion.div
               key={categoryIndex}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              initial={{ opacity: 0, x: categoryIndex % 2 === 0 ? -50 : 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
               transition={{ delay: categoryIndex * 0.1, duration: 0.6 }}
-              className="glass-panel p-8 rounded-2xl border border-white/5 hover:border-neon-purple/30 transition-all duration-300 group"
+              className="bg-black/80 border border-cyber-green/30 p-6 relative overflow-hidden group hover:border-cyber-green/60 transition-colors"
             >
-              <h3 className="text-2xl font-bold mb-6 text-white group-hover:text-neon-purple transition-colors">
-                {category.category}
+              {/* Corner Accents */}
+              <div className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-cyber-green"></div>
+              <div className="absolute top-0 right-0 w-2 h-2 border-t-2 border-r-2 border-cyber-green"></div>
+              <div className="absolute bottom-0 left-0 w-2 h-2 border-b-2 border-l-2 border-cyber-green"></div>
+              <div className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-cyber-green"></div>
+
+              <h3 className="text-xl font-bold font-mono text-cyber-green mb-6 flex items-center gap-2">
+                <span className="text-cyber-green/50">&gt;</span> {category.category}
               </h3>
-              <div className="space-y-5">
+
+              <div className="space-y-6">
                 {category.skills.map((skill, skillIndex) => (
-                  <motion.div
-                    key={skillIndex}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: categoryIndex * 0.1 + skillIndex * 0.05, duration: 0.4 }}
-                    className="relative"
-                  >
-                    <div className="flex items-center justify-between mb-2">
-                      <div className="flex items-center gap-3">
-                        <div className="flex-shrink-0">{skill.icon}</div>
-                        <span className="text-gray-200 font-semibold">{skill.name}</span>
-                      </div>
-                      <span className="text-neon-blue font-mono text-sm font-bold">{skill.level}%</span>
+                  <div key={skillIndex} className="relative">
+                    <div className="flex justify-between text-xs font-mono text-gray-400 mb-1">
+                      <span className="flex items-center gap-2">
+                        <span className="text-cyber-green">{skill.icon}</span>
+                        {skill.name}
+                      </span>
+                      <span className="text-cyber-green">{skill.level}%</span>
                     </div>
-                    <div className="h-2 bg-white/5 rounded-full overflow-hidden">
+                    <div className="h-1 bg-gray-800 w-full">
                       <motion.div
                         initial={{ width: 0 }}
                         whileInView={{ width: `${skill.level}%` }}
-                        transition={{ delay: categoryIndex * 0.1 + skillIndex * 0.05 + 0.2, duration: 0.8, ease: "easeOut" }}
-                        className="h-full bg-gradient-to-r from-neon-blue to-neon-purple rounded-full relative"
+                        transition={{ delay: 0.5 + skillIndex * 0.1, duration: 1, ease: "easeOut" }}
+                        className="h-full bg-cyber-green relative group-hover:shadow-neon-green"
                       >
-                        <div className="absolute inset-0 bg-white/20 animate-shimmer" style={{
-                          backgroundImage: 'linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent)',
-                          backgroundSize: '200% 100%',
-                        }}></div>
+                        <div className="absolute right-0 top-1/2 -translate-y-1/2 w-1 h-3 bg-white"></div>
                       </motion.div>
                     </div>
-                  </motion.div>
+                  </div>
                 ))}
               </div>
             </motion.div>
           ))}
         </div>
 
-        {/* Additional Skills Tags */}
+        {/* Additional Skills Terminal */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-16 text-center"
+          className="mt-16 border border-cyber-green/20 bg-black/50 p-6 font-mono text-sm"
         >
-          <p className="text-gray-500 text-sm uppercase tracking-widest mb-6">Also Experienced With</p>
-          <div className="flex flex-wrap gap-3 justify-center max-w-4xl mx-auto">
+          <div className="text-cyber-green/60 mb-4 border-b border-cyber-green/20 pb-2">
+            // ADDITIONAL_DEPENDENCIES
+          </div>
+          <div className="flex flex-wrap gap-x-8 gap-y-2 text-gray-400">
             {["AWS", "Linux", "CI/CD", "REST APIs", "GraphQL", "Redis", "PostgreSQL", "Kubernetes", "Wireshark", "Metasploit"].map((tech, i) => (
-              <motion.span
-                key={i}
-                initial={{ opacity: 0, scale: 0.8 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 0.6 + i * 0.05, duration: 0.3 }}
-                whileHover={{ scale: 1.1, y: -2 }}
-                className="px-5 py-2 text-sm font-semibold rounded-full bg-white/5 text-gray-400 border border-white/10 hover:border-neon-blue/50 hover:text-neon-blue transition-all cursor-default"
-              >
+              <span key={i} className="hover:text-cyber-green transition-colors cursor-crosshair">
+                <span className="text-cyber-green/40 mr-2">[{i < 9 ? `0${i + 1}` : i + 1}]</span>
                 {tech}
-              </motion.span>
+              </span>
             ))}
           </div>
         </motion.div>
