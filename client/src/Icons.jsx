@@ -197,3 +197,98 @@ export const GitHubIcon = () => (
         </defs>
     </svg>
 );
+
+export const TensorFlowIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M11.76 2.75L2.47 7.94V17.06L11.76 22.25L21.05 17.06V7.94L11.76 2.75Z" fill="#FF6F00" fillOpacity="0.2" />
+        <path d="M12 11.5V20.5" stroke="#FF6F00" strokeWidth="2" strokeLinecap="round" />
+        <path d="M12 11.5L4.5 7" stroke="#FF6F00" strokeWidth="2" strokeLinecap="round" />
+        <path d="M12 11.5L19.5 7" stroke="#FF6F00" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="12" cy="11.5" r="1.5" fill="#FF6F00" />
+    </svg>
+);
+
+export const PyTorchIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" fill="url(#pytorch-gradient)" fillOpacity="0.1" />
+        <path d="M8.5 16.5L12 13M12 13L15.5 9.5M12 13L9 9M12 13L15 16" stroke="#EE4C2C" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <defs>
+            <linearGradient id="pytorch-gradient" x1="2" y1="2" x2="22" y2="22">
+                <stop offset="0%" stopColor="#EE4C2C" />
+                <stop offset="100%" stopColor="#EE4C2C" />
+            </linearGradient>
+        </defs>
+    </svg>
+);
+
+export const KerasIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L2 7V17L12 22L22 17V7L12 2Z" fill="#D00000" fillOpacity="0.1" />
+        <path d="M17 6L7 18M17 18L7 6" stroke="#D00000" strokeWidth="2" strokeLinecap="round" />
+        <circle cx="12" cy="12" r="2" fill="#D00000" />
+    </svg>
+);
+
+export const ScikitLearnIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="#F7931E" strokeWidth="1.5" fill="rgba(247, 147, 30, 0.1)" />
+        <path d="M12 6V18M6 12H18" stroke="#3498DB" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="12" cy="12" r="3" fill="#F7931E" />
+    </svg>
+);
+
+export const ExpressIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="#000000" fillOpacity="0.1" />
+        <path d="M7 12H17M12 7V17" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" />
+        <text x="12" y="16" fontSize="10" fill="white" textAnchor="middle" fontWeight="bold" fontFamily="Arial">EX</text>
+    </svg>
+);
+
+export const SQLIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 4C7.58172 4 4 5.79086 4 8V16C4 18.2091 7.58172 20 12 20C16.4183 20 20 18.2091 20 16V8C20 5.79086 16.4183 4 12 4Z" fill="url(#sql-gradient)" fillOpacity="0.1" stroke="#00758F" strokeWidth="1.5" />
+        <path d="M4 8C4 10.2091 7.58172 12 12 12C16.4183 12 20 10.2091 20 8" stroke="#00758F" strokeWidth="1.5" />
+        <path d="M4 12C4 14.2091 7.58172 16 12 16C16.4183 16 20 14.2091 20 12" stroke="#00758F" strokeWidth="1.5" />
+        <defs>
+            <linearGradient id="sql-gradient" x1="4" y1="4" x2="20" y2="20">
+                <stop offset="0%" stopColor="#00758F" />
+                <stop offset="100%" stopColor="#F29111" />
+            </linearGradient>
+        </defs>
+    </svg>
+);
+
+export const NetworkSecurityIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L3 7V17L12 22L21 17V7L12 2Z" stroke="#4ECDC4" strokeWidth="1.5" fill="rgba(78, 205, 196, 0.1)" />
+        <circle cx="12" cy="12" r="4" stroke="#4ECDC4" strokeWidth="1.5" />
+        <path d="M12 8V10M12 14V16M8 12H10M14 12H16" stroke="#4ECDC4" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+);
+
+export const EthicalHackingIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect x="2" y="4" width="20" height="16" rx="2" stroke="#FF6B6B" strokeWidth="1.5" fill="rgba(255, 107, 107, 0.1)" />
+        <path d="M6 10L8 12L6 14" stroke="#FF6B6B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M10 14H14" stroke="#FF6B6B" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+);
+
+export const CryptographyIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <rect x="6" y="10" width="12" height="10" rx="2" stroke="#FFE66D" strokeWidth="1.5" fill="rgba(255, 230, 109, 0.1)" />
+        <path d="M8 10V7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7V10" stroke="#FFE66D" strokeWidth="1.5" />
+        <path d="M12 14V16" stroke="#FFE66D" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="12" cy="15" r="1" fill="#FFE66D" />
+    </svg>
+);
+
+export const ThreatAnalysisIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="9" stroke="#FF6B6B" strokeWidth="1.5" fill="rgba(255, 107, 107, 0.1)" />
+        <path d="M12 7V12L15 15" stroke="#FF6B6B" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="12" cy="12" r="2" fill="#FF6B6B" />
+        <path d="M12 3V5M12 19V21M3 12H5M19 12H21" stroke="#FF6B6B" strokeWidth="1.5" strokeLinecap="round" />
+    </svg>
+);

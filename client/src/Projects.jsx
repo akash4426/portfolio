@@ -1,4 +1,26 @@
 import { motion } from "framer-motion";
+import {
+  PythonIcon, ReactIcon, PyTorchIcon,
+  ClipIcon, GeminiIcon, FastApiIcon, RagIcon,
+  EmbeddingsIcon, TailwindIcon, FramerMotionIcon,
+  FlowerIcon, ShieldIcon, LightningIcon
+} from "./Icons";
+
+const techIcons = {
+  "Python": PythonIcon,
+  "React": ReactIcon,
+  "PyTorch": PyTorchIcon,
+  "CLIP": ClipIcon,
+  "Gemini": GeminiIcon,
+  "FastAPI": FastApiIcon,
+  "RAG": RagIcon,
+  "Embeddings": EmbeddingsIcon,
+  "Tailwind": TailwindIcon,
+  "Framer Motion": FramerMotionIcon,
+  "Flower": FlowerIcon,
+  "Machine Learning": LightningIcon,
+  "Security": ShieldIcon
+};
 
 const projects = [
   {
@@ -95,14 +117,18 @@ export default function Projects() {
                 </p>
 
                 <div className="flex flex-wrap gap-2 mb-6">
-                  {project.tech.map((t, i) => (
-                    <span
-                      key={i}
-                      className="px-2 py-1 text-xs rounded-md bg-white/5 text-gray-300 border border-white/5"
-                    >
-                      {t}
-                    </span>
-                  ))}
+                  {project.tech.map((t, i) => {
+                    const Icon = techIcons[t] || LightningIcon;
+                    return (
+                      <span
+                        key={i}
+                        className="px-2 py-1 text-xs rounded-md bg-white/5 text-gray-300 border border-white/5 flex items-center gap-1"
+                      >
+                        <Icon />
+                        {t}
+                      </span>
+                    );
+                  })}
                 </div>
 
                 <a

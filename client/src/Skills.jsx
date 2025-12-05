@@ -3,8 +3,30 @@ import {
   PythonIcon, JavaScriptIcon, CppIcon, JavaIcon,
   BrainIcon, FireIcon, LockIcon, BookIcon,
   ReactIcon, NodeIcon, MongoIcon, LightningIcon,
-  ShieldIcon, SearchIcon, DockerIcon, GitIcon
+  ShieldIcon, SearchIcon, DockerIcon, GitIcon,
+  TensorFlowIcon, PyTorchIcon, KerasIcon, ScikitLearnIcon,
+  ExpressIcon, SQLIcon, NetworkSecurityIcon, EthicalHackingIcon,
+  CryptographyIcon, ThreatAnalysisIcon
 } from "./Icons";
+
+const skillIcons = {
+  "TensorFlow": TensorFlowIcon,
+  "PyTorch": PyTorchIcon,
+  "Keras": KerasIcon,
+  "Scikit-learn": ScikitLearnIcon,
+  "Network Security": NetworkSecurityIcon,
+  "Ethical Hacking": EthicalHackingIcon,
+  "Cryptography": CryptographyIcon,
+  "Threat Analysis": ThreatAnalysisIcon,
+  "React.js": ReactIcon,
+  "Node.js": NodeIcon,
+  "MongoDB": MongoIcon,
+  "Express": ExpressIcon,
+  "Python": PythonIcon,
+  "JavaScript": JavaScriptIcon,
+  "C++": CppIcon,
+  "SQL": SQLIcon,
+};
 
 const skills = {
   "Neural Networks": [
@@ -70,22 +92,28 @@ export default function Skills() {
                 </h3>
 
                 <div className="space-y-4">
-                  {items.map((skill, index) => (
-                    <div key={index} className="relative">
-                      <div className="flex justify-between text-sm mb-1">
-                        <span className="text-gray-300">{skill.name}</span>
-                        <span className="text-neural-blue font-mono text-xs">{skill.level}%</span>
+                  {items.map((skill, index) => {
+                    const Icon = skillIcons[skill.name] || LightningIcon;
+                    return (
+                      <div key={index} className="relative">
+                        <div className="flex justify-between text-sm mb-1">
+                          <span className="text-gray-300 flex items-center gap-2">
+                            <Icon />
+                            {skill.name}
+                          </span>
+                          <span className="text-neural-blue font-mono text-xs">{skill.level}%</span>
+                        </div>
+                        <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                          <motion.div
+                            initial={{ width: 0 }}
+                            whileInView={{ width: `${skill.level}%` }}
+                            transition={{ duration: 1, delay: 0.5 + (index * 0.1) }}
+                            className="h-full bg-gradient-to-r from-neural-blue to-synapse-purple"
+                          ></motion.div>
+                        </div>
                       </div>
-                      <div className="h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
-                        <motion.div
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          transition={{ duration: 1, delay: 0.5 + (index * 0.1) }}
-                          className="h-full bg-gradient-to-r from-neural-blue to-synapse-purple"
-                        ></motion.div>
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             </motion.div>

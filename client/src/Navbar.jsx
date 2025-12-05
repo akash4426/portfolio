@@ -21,10 +21,10 @@ export default function Navbar() {
     }, []);
 
     const links = [
-        { name: "// ABOUT", href: "#about" },
-        { name: "// SKILLS", href: "#skills" },
-        { name: "// PROJECTS", href: "#projects" },
-        { name: "// CONTACT", href: "#contact" },
+        { name: "ABOUT", href: "#about" },
+        { name: "SKILLS", href: "#skills" },
+        { name: "PROJECTS", href: "#projects" },
+        { name: "CONTACT", href: "#contact" },
     ];
 
     const handleLinkClick = () => {
