@@ -292,3 +292,80 @@ export const ThreatAnalysisIcon = () => (
         <path d="M12 3V5M12 19V21M3 12H5M19 12H21" stroke="#FF6B6B" strokeWidth="1.5" strokeLinecap="round" />
     </svg>
 );
+
+export const ClipIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="black" fillOpacity="0.8" />
+        <path d="M8 12C8 14.21 9.79 16 12 16C14.21 16 16 14.21 16 12C16 9.79 14.21 8 12 8C9.79 8 8 9.79 8 12Z" stroke="white" strokeWidth="2" />
+        <path d="M12 2V8M12 16V22M2 12H8M16 12H22" stroke="white" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+);
+
+export const GeminiIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L14.5 9.5L22 12L14.5 14.5L12 22L9.5 14.5L2 12L9.5 9.5L12 2Z" fill="url(#gemini-gradient)" />
+        <defs>
+            <linearGradient id="gemini-gradient" x1="2" y1="2" x2="22" y2="22">
+                <stop offset="0%" stopColor="#4E8CFF" />
+                <stop offset="100%" stopColor="#FFF" />
+            </linearGradient>
+        </defs>
+    </svg>
+);
+
+export const FastApiIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="#009688" fillOpacity="0.1" />
+        <path d="M12 6V18M12 6L8 10M12 6L16 10" stroke="#009688" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M8 14H16" stroke="#009688" strokeWidth="2" strokeLinecap="round" />
+    </svg>
+);
+
+export const RagIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M14 2H6C4.9 2 4 2.9 4 4V20C4 21.1 4.9 22 6 22H18C19.1 22 20 21.1 20 20V8L14 2Z" fill="#607D8B" fillOpacity="0.1" />
+        <path d="M14 2V8H20" stroke="#607D8B" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M10 12L14 16M14 12L10 16" stroke="#607D8B" strokeWidth="1.5" strokeLinecap="round" />
+        <circle cx="12" cy="14" r="5" stroke="#607D8B" strokeWidth="1.5" />
+    </svg>
+);
+
+export const EmbeddingsIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <circle cx="6" cy="6" r="2" fill="#9C27B0" />
+        <circle cx="18" cy="6" r="2" fill="#9C27B0" />
+        <circle cx="6" cy="18" r="2" fill="#9C27B0" />
+        <circle cx="18" cy="18" r="2" fill="#9C27B0" />
+        <circle cx="12" cy="12" r="3" fill="#E1BEE7" />
+        <path d="M6 6L12 12M18 6L12 12M6 18L12 12M18 18L12 12" stroke="#9C27B0" strokeWidth="1" />
+    </svg>
+);
+
+export const TailwindIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 6C9 6 9 10 6 10C3 10 3 6 6 6C9 6 9 2 12 2C15 2 15 6 18 6C21 6 21 10 18 10C15 10 15 6 12 6Z" fill="#38B2AC" />
+        <path d="M12 14C9 14 9 18 6 18C3 18 3 14 6 14C9 14 9 10 12 10C15 10 15 14 18 14C21 14 21 18 18 18C15 18 15 14 12 14Z" fill="#38B2AC" />
+    </svg>
+);
+
+export const FramerMotionIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M4 4H20V12H12L4 20V4Z" fill="white" fillOpacity="0.1" />
+        <path d="M4 4H20L12 12L4 4Z" fill="#0055FF" />
+        <path d="M4 20L12 12H20L12 20H4Z" fill="#FF0088" />
+    </svg>
+);
+
+export const FlowerIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <circle cx="12" cy="12" r="4" fill="#F47F24" />
+        <circle cx="12" cy="5" r="3" fill="#F47F24" fillOpacity="0.6" />
+        <circle cx="12" cy="19" r="3" fill="#F47F24" fillOpacity="0.6" />
+        <circle cx="5" cy="12" r="3" fill="#F47F24" fillOpacity="0.6" />
+        <circle cx="19" cy="12" r="3" fill="#F47F24" fillOpacity="0.6" />
+        <circle cx="7" cy="7" r="2" fill="#F47F24" fillOpacity="0.4" />
+        <circle cx="17" cy="7" r="2" fill="#F47F24" fillOpacity="0.4" />
+        <circle cx="7" cy="17" r="2" fill="#F47F24" fillOpacity="0.4" />
+        <circle cx="17" cy="17" r="2" fill="#F47F24" fillOpacity="0.4" />
+    </svg>
+);
