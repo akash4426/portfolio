@@ -17,8 +17,12 @@ export default function About() {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neural-blue to-synapse-purple"></div>
 
               <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-neural-blue to-synapse-purple flex items-center justify-center text-2xl font-bold text-white shadow-lg">
-                  AK
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-neural-blue to-synapse-purple p-[2px] shadow-lg">
+                  <img
+                    src="/images/akash.jpeg"
+                    alt="Profile"
+                    className="w-full h-full object-cover rounded-2xl bg-deep-space"
+                  />
                 </div>
                 <div>
                   <h3 className="text-xl font-bold text-white">Model Architecture</h3>
