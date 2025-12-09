@@ -16,16 +16,19 @@ export default function About() {
             <div className="glass-card p-8 rounded-3xl border border-white/10 relative overflow-hidden">
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-neural-blue to-synapse-purple"></div>
 
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-neural-blue to-synapse-purple p-[2px] shadow-lg">
-                  <img
-                    src="/images/akash.jpeg"
-                    alt="Profile"
-                    className="w-full h-full object-cover rounded-2xl bg-deep-space"
-                  />
+              <div className="flex flex-col items-center gap-6 mb-8">
+                <div className="relative group">
+                  <div className="absolute -inset-1 bg-gradient-to-r from-neural-blue to-synapse-purple rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                  <div className="w-32 h-32 md:w-40 md:h-40 relative rounded-3xl bg-gradient-to-br from-neural-blue to-synapse-purple p-[2px] shadow-2xl shadow-neural-blue/20">
+                    <img
+                      src="/images/akash.jpeg"
+                      alt="Profile"
+                      className="w-full h-full object-cover rounded-[22px] bg-deep-space"
+                    />
+                  </div>
                 </div>
-                <div>
-                  <h3 className="text-xl font-bold text-white">Model Architecture</h3>
+                <div className="text-center">
+                  <h3 className="text-2xl font-bold text-white mb-1">Model Architecture</h3>
                   <p className="text-sm text-gray-400 font-mono">v2.4.0 (Stable)</p>
                 </div>
               </div>
