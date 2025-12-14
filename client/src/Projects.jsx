@@ -70,46 +70,46 @@ const projects = [
 
 export default function Projects() {
   return (
-    <section id="projects" className="py-24 px-6 relative">
+    <section id="projects" className="py-32 px-6 relative bg-black/40">
       <div className="max-w-7xl mx-auto">
-        <FadeIn className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display text-white">
+        <FadeIn className="text-center mb-20">
+          <h2 className="text-5xl md:text-7xl font-bold mb-8 font-display text-white tracking-tight">
             Selected <span className="text-gradient-gold">Work</span>
           </h2>
-          <p className="text-slate-400 text-lg max-w-2xl mx-auto font-light">
+          <p className="text-slate-400 text-xl max-w-2xl mx-auto font-light leading-relaxed">
             Showcasing innovative solutions in Artificial Intelligence and Cybersecurity.
           </p>
         </FadeIn>
 
-        <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 group">
+        <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 group">
           {projects.map((project, index) => (
             <FadeIn
               key={index}
               delay={index * 0.1}
             >
               <TiltCard className="h-full">
-                <div className="glass-card rounded-2xl overflow-hidden group hover:border-gold-primary/40 transition-all duration-500 hover:shadow-2xl h-full flex flex-col bg-obsidian/50">
+                <div className="h-full rounded-3xl overflow-hidden border border-white/5 bg-[#080808] hover:border-gold-primary/30 transition-all duration-500 hover:shadow-2xl hover:shadow-gold/5 flex flex-col relative group">
                   {/* Image Container */}
-                  <div className="h-48 relative overflow-hidden flex-shrink-0">
-                    <div className="absolute inset-0 bg-obsidian/40 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
+                  <div className="h-56 relative overflow-hidden flex-shrink-0">
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#080808] to-transparent z-10 opacity-80 group-hover:opacity-40 transition-opacity duration-500"></div>
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                      className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-1000 ease-out"
                     />
                     <div className="absolute top-4 right-4 z-20">
-                      <span className="px-3 py-1 text-xs font-bold rounded-full bg-obsidian/80 backdrop-blur-md text-white border border-white/10 uppercase tracking-wider">
+                      <span className="px-3 py-1 text-[10px] font-bold rounded-full bg-black/90 text-white border border-white/10 uppercase tracking-widest">
                         {project.category}
                       </span>
                     </div>
                   </div>
 
-                  <div className="p-8 flex flex-col flex-grow">
-                    <h3 className="text-xl font-bold text-white mb-3 group-hover:text-gold-primary transition-colors font-display">
+                  <div className="p-8 flex flex-col flex-grow relative z-20">
+                    <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-gold-primary transition-colors font-display tracking-tight">
                       {project.title}
                     </h3>
 
-                    <p className="text-slate-400 text-sm mb-6 leading-relaxed line-clamp-3 flex-grow">
+                    <p className="text-slate-400 text-sm mb-8 leading-relaxed line-clamp-3 flex-grow font-light">
                       {project.description}
                     </p>
 
@@ -119,7 +119,7 @@ export default function Projects() {
                         return (
                           <span
                             key={i}
-                            className="px-2.5 py-1 text-xs rounded-md bg-white/5 text-slate-300 border border-white/5 flex items-center gap-1.5 font-medium"
+                            className="px-3 py-1 text-xs rounded-full bg-white/5 text-slate-300 border border-white/5 flex items-center gap-1.5 font-medium group-hover:bg-white/10 transition-colors"
                           >
                             <Icon />
                             {t}
@@ -130,9 +130,9 @@ export default function Projects() {
 
                     <a
                       href={project.link}
-                      className="inline-flex items-center gap-2 text-sm font-bold text-gold-primary hover:text-gold-light transition-colors group/link mt-auto"
+                      className="inline-flex items-center gap-2 text-sm font-bold text-white hover:text-gold-primary transition-colors group/link mt-auto uppercase tracking-wider"
                     >
-                      View Project <span className="text-lg group-hover/link:translate-x-1 transition-transform">→</span>
+                      View Project <span className="transform group-hover/link:translate-x-1 transition-transform">→</span>
                     </a>
                   </div>
                 </div>
