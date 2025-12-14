@@ -7,46 +7,40 @@ export default {
   theme: {
     extend: {
       colors: {
-        "neural-blue": "#00f3ff",
-        "synapse-purple": "#bc13fe",
-        "deep-mind": "#050510", // Darker, bluer background
-        "ai-cyan": "#00d9ff",
-        "cyber-green": "#00ff41", // Keep as accent for security
-        "alert-red": "#ff0000",
+        "obsidian": "#020617", // Slate 950 - Main background
+        "obsidian-light": "#0f172a", // Slate 900 - Cards/Secondary
+        "gold-primary": "#f59e0b", // Amber 500 - Primary accent
+        "gold-light": "#fbbf24", // Amber 400 - Hover/Highlight
+        "gold-dim": "#b45309", // Amber 700 - Dimmed/Borders
+        "slate-text": "#94a3b8", // Slate 400 - Secondary text
+        "slate-light": "#e2e8f0", // Slate 200 - Primary text
       },
       fontFamily: {
         sans: ['"Outfit"', 'sans-serif'],
-        mono: ['"Share Tech Mono"', '"Fira Code"', 'monospace'],
+        display: ['"Outfit"', 'sans-serif'],
       },
       backgroundImage: {
-        'neural-grid': 'radial-gradient(circle, rgba(0, 243, 255, 0.1) 1px, transparent 1px)',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+        'obsidian-gradient': 'linear-gradient(to bottom right, #020617, #0f172a)',
       },
       animation: {
+        "fade-in": "fadeIn 1s ease-out forwards",
+        "slide-up": "slideUp 0.8s ease-out forwards",
         "pulse-slow": "pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-        "float": "float 6s ease-in-out infinite",
-        "float-delayed": "float 6s ease-in-out 3s infinite",
-        "glow": "glow 2s ease-in-out infinite",
-        "spin-slow": "spin 12s linear infinite",
-        "spin-reverse-slow": "spin-reverse 15s linear infinite",
       },
       keyframes: {
-        float: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-20px)" },
+        fadeIn: {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
         },
-        glow: {
-          "0%, 100%": { filter: "drop-shadow(0 0 5px rgba(0, 243, 255, 0.5))" },
-          "50%": { filter: "drop-shadow(0 0 20px rgba(0, 243, 255, 0.8))" },
-        },
-        "spin-reverse": {
-          "from": { transform: "rotate(360deg)" },
-          "to": { transform: "rotate(0deg)" },
+        slideUp: {
+          "0%": { opacity: "0", transform: "translateY(20px)" },
+          "100%": { opacity: "1", transform: "translateY(0)" },
         },
       },
       boxShadow: {
-        'neural': '0 0 20px rgba(0, 243, 255, 0.3), 0 0 40px rgba(188, 19, 254, 0.2)',
-        'neural-strong': '0 0 30px rgba(0, 243, 255, 0.5), 0 0 60px rgba(188, 19, 254, 0.3)',
+        'glass': '0 4px 30px rgba(0, 0, 0, 0.1)',
+        'gold': '0 0 20px rgba(245, 158, 11, 0.15)',
       },
     },
   },

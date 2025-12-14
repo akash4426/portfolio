@@ -1,23 +1,8 @@
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
 import { EmailIcon, LinkedInIcon, GitHubIcon } from "./Icons";
 
 export default function Footer() {
-  const [uptime, setUptime] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setUptime(prev => prev + 1);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const formatUptime = (seconds) => {
-    const h = Math.floor(seconds / 3600);
-    const m = Math.floor((seconds % 3600) / 60);
-    const s = seconds % 60;
-    return `${h.toString().padStart(2, '0')}:${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
-  };
+  const currentYear = new Date().getFullYear();
 
   const socialLinks = [
     { name: "GitHub", url: "https://github.com/akash4426", icon: <GitHubIcon /> },
@@ -26,23 +11,22 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-black border-t border-white/5 py-12 overflow-hidden">
-      <div className="absolute inset-0 neural-bg opacity-10"></div>
+    <footer className="relative bg-obsidian border-t border-white/5 py-12 overflow-hidden">
+      <div className="absolute inset-0 bg-pattern opacity-50"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-8">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold text-white mb-2 flex items-center gap-2 justify-center md:justify-start">
-              <span className="w-2 h-2 bg-neural-blue rounded-full animate-pulse"></span>
-              SYSTEM STATUS: ONLINE
+            <h3 className="text-2xl font-bold text-white mb-2 font-display">
+              Akash Karri
             </h3>
-            <p className="text-gray-500 text-sm font-mono">
-              SESSION UPTIME: <span className="text-neural-blue">{formatUptime(uptime)}</span>
+            <p className="text-slate-500 text-sm max-w-xs">
+              Building the future of secure intelligence.
             </p>
           </div>
 
           <div className="flex gap-4">
-            {socialLinks.map((social, index) => (
+            {socialLinks.map((social) => (
               <motion.a
                 key={social.name}
                 href={social.url}
@@ -50,7 +34,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-12 h-12 flex items-center justify-center border border-white/10 bg-white/5 text-white hover:bg-neural-blue hover:text-black transition-all rounded-full group"
+                className="w-12 h-12 flex items-center justify-center border border-white/10 bg-white/5 text-slate-400 hover:bg-gold-primary hover:text-obsidian transition-all rounded-full group"
                 title={social.name}
               >
                 <span className="text-xl group-hover:scale-110 transition-transform">{social.icon}</span>
@@ -59,27 +43,27 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-6 mb-8 text-sm">
+        <div className="flex flex-wrap justify-center md:justify-start gap-8 mb-8 text-sm">
           {["About", "Skills", "Projects", "Contact"].map((link) => (
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="text-gray-500 hover:text-neural-blue transition-colors relative group"
+              className="text-slate-500 hover:text-gold-primary transition-colors relative group font-medium"
             >
               {link}
-              <span className="absolute -bottom-1 left-0 w-0 h-px bg-neural-blue group-hover:w-full transition-all duration-300"></span>
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold-primary group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
         </div>
 
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
 
-        <div className="text-center">
-          <p className="text-gray-600 text-xs uppercase tracking-widest">
-            © {new Date().getFullYear()} AKASH KARRI // ALL RIGHTS RESERVED
+        <div className="flex flex-col md:flex-row justify-between items-center text-xs text-slate-600 gap-4">
+          <p>
+            © {currentYear} Akash Karri. All rights reserved.
           </p>
-          <p className="text-gray-700 text-[10px] mt-2">
-            NEURAL LINK ESTABLISHED // SECURE CONNECTION
+          <p className="flex items-center gap-2">
+            Designed & Built with <span className="text-gold-primary">♥</span>
           </p>
         </div>
       </div>
