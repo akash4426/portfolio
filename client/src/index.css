@@ -9,7 +9,7 @@
 
   color-scheme: dark;
   color: #e2e8f0;
-  background-color: #020617;
+  background-color: #0a0a0a;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -22,7 +22,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   overflow-x: hidden;
-  background: #020617;
+  background: #0a0a0a;
   cursor: default;
 }
 
@@ -32,11 +32,11 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #020617;
+  background: #0a0a0a;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #1e293b;
+  background: #262626;
   border-radius: 4px;
 }
 
@@ -46,7 +46,7 @@ body {
 
 /* Glassmorphism - Refined */
 .glass-card {
-  background: rgba(15, 23, 42, 0.6);
+  background: rgba(23, 23, 23, 0.6);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid rgba(255, 255, 255, 0.05);
