@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { EmailIcon, LinkedInIcon, GitHubIcon } from "./Icons";
+import { HeartIcon } from "./NavIcons";
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
@@ -63,7 +64,7 @@ export default function Footer() {
             © {currentYear} Akash Karri. All rights reserved.
           </p>
           <p className="flex items-center gap-2">
-            Designed & Built with <span className="text-gold-primary">♥</span>
+            Designed & Built with <HeartIcon className="w-4 h-4 text-gold-primary fill-current" />
           </p>
         </div>
       </div>

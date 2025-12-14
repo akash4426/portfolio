@@ -1,6 +1,8 @@
 import { motion } from "framer-motion";
 import Spotlight from "./components/Spotlight";
 import FadeIn from "./components/FadeIn";
+import { LightningIcon, ShieldIcon } from "./Icons";
+import { GraduationIcon } from "./NavIcons";
 
 export default function About() {
   return (
@@ -51,14 +53,14 @@ export default function About() {
           <div className="relative rounded-3xl border border-white/10 bg-obsidian p-6 flex flex-col justify-between group/card hover:border-gold-primary/30 transition-colors">
             <div className="space-y-4">
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gold-primary/20 flex items-center justify-center text-gold-primary">⚡</div>
+                <div className="w-10 h-10 rounded-full bg-gold-primary/20 flex items-center justify-center text-gold-primary"><LightningIcon /></div>
                 <div>
                   <div className="text-xs text-slate-500 uppercase tracking-wider">Focus</div>
                   <div className="text-white font-medium">AI Integration</div>
                 </div>
               </div>
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500">🛡️</div>
+                <div className="w-10 h-10 rounded-full bg-blue-500/20 flex items-center justify-center text-blue-500"><ShieldIcon /></div>
                 <div>
                   <div className="text-xs text-slate-500 uppercase tracking-wider">Approach</div>
                   <div className="text-white font-medium">Zero Trust</div>
@@ -69,7 +71,7 @@ export default function About() {
 
           {/* Card 4: Feature */}
           <div className="relative rounded-3xl border border-white/10 bg-obsidian p-6 flex items-center gap-4 group/card hover:bg-white/5 transition-colors">
-            <div className="text-4xl">🎓</div>
+            <div className="text-gold-primary"><GraduationIcon className="w-10 h-10" /></div>
             <div>
               <div className="font-bold text-white text-lg">Lifelong Learner</div>
               <div className="text-sm text-slate-500">Continuous Evolution</div>

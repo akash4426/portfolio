@@ -1,12 +1,13 @@
 import Dock from "./components/Dock";
+import { HomeIcon, UserIcon, ChipIcon, RocketIcon, MailIcon } from "./NavIcons";
 
 export default function Navbar() {
     const items = [
-        { label: "Home", icon: "⚡", href: "#hero" },
-        { label: "About", icon: "👨‍💻", href: "#about" },
-        { label: "Skills", icon: "🛸", href: "#skills" },
-        { label: "Projects", icon: "🚀", href: "#projects" },
-        { label: "Contact", icon: "📬", href: "#contact" },
+        { label: "Home", icon: <HomeIcon className="w-6 h-6" />, href: "#hero" },
+        { label: "About", icon: <UserIcon className="w-6 h-6" />, href: "#about" },
+        { label: "Skills", icon: <ChipIcon className="w-6 h-6" />, href: "#skills" },
+        { label: "Projects", icon: <RocketIcon className="w-6 h-6" />, href: "#projects" },
+        { label: "Contact", icon: <MailIcon className="w-6 h-6" />, href: "#contact" },
     ];
 
     return (
