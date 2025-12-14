@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import FadeIn from "./components/FadeIn";
+import Spotlight from "./components/Spotlight";
 import {
   PythonIcon, JavaScriptIcon, CppIcon, JavaIcon,
   BrainIcon, FireIcon, LockIcon, BookIcon,
@@ -69,14 +70,14 @@ export default function Skills() {
           </p>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <Spotlight className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 group">
           {Object.entries(skills).map(([category, items], categoryIndex) => (
             <FadeIn
               key={category}
               delay={categoryIndex * 0.1}
               className="h-full"
             >
-              <div className="glass-card p-6 rounded-2xl border border-white/5 hover:border-gold-primary/30 transition-all duration-300 h-full group hover:-translate-y-1">
+              <div className="glass-card p-6 rounded-2xl border border-white/5 hover:border-gold-primary/30 transition-all duration-300 h-full group hover:-translate-y-1 bg-obsidian/50">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
                   <span className="w-1.5 h-6 bg-gold-primary rounded-full"></span>
                   {category}
@@ -109,7 +110,7 @@ export default function Skills() {
               </div>
             </FadeIn>
           ))}
-        </div>
+        </Spotlight>
       </div>
     </section>
   );

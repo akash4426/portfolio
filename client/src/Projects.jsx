@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import FadeIn from "./components/FadeIn";
 import TiltCard from "./components/TiltCard";
+import Spotlight from "./components/Spotlight";
 import {
   PythonIcon, ReactIcon, PyTorchIcon,
   ClipIcon, GeminiIcon, FastApiIcon, RagIcon,
@@ -80,14 +81,14 @@ export default function Projects() {
           </p>
         </FadeIn>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <Spotlight className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 group">
           {projects.map((project, index) => (
             <FadeIn
               key={index}
               delay={index * 0.1}
             >
               <TiltCard className="h-full">
-                <div className="glass-card rounded-2xl overflow-hidden group hover:border-gold-primary/40 transition-all duration-500 hover:shadow-2xl h-full flex flex-col">
+                <div className="glass-card rounded-2xl overflow-hidden group hover:border-gold-primary/40 transition-all duration-500 hover:shadow-2xl h-full flex flex-col bg-obsidian/50">
                   {/* Image Container */}
                   <div className="h-48 relative overflow-hidden flex-shrink-0">
                     <div className="absolute inset-0 bg-obsidian/40 z-10 group-hover:bg-transparent transition-colors duration-500"></div>
@@ -138,7 +139,7 @@ export default function Projects() {
               </TiltCard>
             </FadeIn>
           ))}
-        </div>
+        </Spotlight>
       </div>
     </section>
   );
