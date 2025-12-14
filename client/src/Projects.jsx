@@ -31,7 +31,7 @@ const projects = [
     description: "Multimodal Retrieval-Augmented Generation system extracting embeddings from video frames using CLIP and performing intelligent video-based QA using Gemini.",
     tech: ["CLIP", "Gemini", "Python", "FastAPI"],
     link: "https://videorag-in9agcr2rynefnchvpwflz.streamlit.app/",
-    image: "/images/projects/video-rag.png",
+    image: "/images/projects/video-rag-v2.png",
     category: "AI Research"
   },
   {
@@ -39,7 +39,7 @@ const projects = [
     description: "Retrieval-Augmented Generation (RAG) system processing text and PDF documents. Extracts embeddings, stores in vector DB, and queries via FastAPI.",
     tech: ["Python", "FastAPI", "RAG", "Embeddings"],
     link: "https://github.com/akash4426",
-    image: "/images/projects/doc-rag.png",
+    image: "/images/projects/doc-rag-v2.png",
     category: "NLP"
   },
   {
@@ -47,7 +47,7 @@ const projects = [
     description: "Advanced personal portfolio featuring glassmorphism, AI-driven aesthetic, and system-level animations built with React and Framer Motion.",
     tech: ["React", "Tailwind", "Framer Motion"],
     link: "#",
-    image: "/images/projects/portfolio.png",
+    image: "/images/projects/portfolio-v2.png",
     category: "Web Dev"
   },
   {
@@ -55,7 +55,7 @@ const projects = [
     description: "Decentralized machine learning system for privacy-preserving AI, enabling collaborative model training without sharing raw data.",
     tech: ["Python", "PyTorch", "Flower"],
     link: "https://github.com/akash4426",
-    image: "/images/projects/federated-learning.png",
+    image: "/images/projects/federated-learning-v2.png",
     category: "Privacy AI"
   },
   {
@@ -63,7 +63,7 @@ const projects = [
     description: "Phishing URL detector using Python and Machine Learning to monitor system events and identify potential security breaches.",
     tech: ["Python", "Machine Learning"],
     link: "https://github.com/akash4426/Phishing_Links",
-    image: "/images/projects/threat-detection.png",
+    image: "/images/projects/threat-detection-v2.png",
     category: "Security"
   },
 ];
