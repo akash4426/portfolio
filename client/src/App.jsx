@@ -1,23 +1,105 @@
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useRef, useState } from "react";
 import Navbar from "./Navbar";
 import About from "./About";
 import Skills from "./Skills";
 import Contact from "./Contact";
 import Footer from "./Footer";
 import Projects from "./Projects";
+import MagneticButton from "./components/MagneticButton";
+
+const ParticleBackground = () => {
+  const canvasRef = useRef(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    let animationFrameId;
+    let particles = [];
+
+    const resize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener("resize", resize);
+    resize();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2;
+        this.speedX = (Math.random() - 0.5) * 0.2;
+        this.speedY = (Math.random() - 0.5) * 0.2;
+        this.opacity = Math.random() * 0.5;
+      }
+
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+
+        if (this.x > canvas.width) this.x = 0;
+        else if (this.x < 0) this.x = canvas.width;
+        if (this.y > canvas.height) this.y = 0;
+        else if (this.y < 0) this.y = canvas.height;
+      }
+
+      draw() {
+        ctx.fillStyle = `rgba(255, 255, 255, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    const init = () => {
+      particles = [];
+      for (let i = 0; i < 50; i++) {
+        particles.push(new Particle());
+      }
+    };
+
+    const animate = () => {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      particles.forEach((particle) => {
+        particle.update();
+        particle.draw();
+      });
+      animationFrameId = requestAnimationFrame(animate);
+    };
+
+    init();
+    animate();
+
+    return () => {
+      window.removeEventListener("resize", resize);
+      cancelAnimationFrame(animationFrameId);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} className="absolute inset-0 pointer-events-none opacity-30" />;
+};
 
 export default function App() {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
+
   return (
     <div className="bg-obsidian text-slate-light overflow-hidden font-display selection:bg-gold-light selection:text-obsidian">
       <Navbar />
 
       {/* Hero Section */}
-      <div className="min-h-screen flex items-center justify-center px-6 relative pt-20 bg-pattern">
-        {/* Subtle Background Gradients */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
+      <div className="min-h-screen flex items-center justify-center px-6 relative pt-20 bg-pattern overflow-hidden">
+        <ParticleBackground />
+
+        {/* Parallax Background Elements */}
+        <motion.div style={{ y }} className="absolute inset-0 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-gold-primary/5 rounded-full blur-[100px]" />
           <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-obsidian-light/50 rounded-full blur-[100px]" />
-        </div>
+        </motion.div>
 
         <div className="relative z-10 w-full max-w-5xl text-center">
           <motion.div
@@ -38,19 +120,23 @@ export default function App() {
               Transforming complex problems into elegant solutions through <span className="text-slate-200 font-normal">Artificial Intelligence</span> and <span className="text-slate-200 font-normal">Cybersecurity</span> excellence.
             </p>
 
-            <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <a
-                href="#projects"
-                className="px-10 py-4 rounded-full bg-gold-primary text-obsidian font-bold hover:bg-gold-light hover:scale-105 transition-all duration-300 shadow-gold"
-              >
-                View Work
-              </a>
-              <a
-                href="#contact"
-                className="px-10 py-4 rounded-full border border-slate-700 bg-obsidian-light/50 text-white font-medium hover:bg-obsidian-light hover:border-slate-500 transition-all duration-300 backdrop-blur-md"
-              >
-                Get in Touch
-              </a>
+            <div className="flex flex-col sm:flex-row justify-center gap-6 items-center">
+              <MagneticButton>
+                <a
+                  href="#projects"
+                  className="inline-block px-10 py-4 rounded-full bg-gold-primary text-obsidian font-bold hover:bg-gold-light hover:shadow-gold transition-all duration-300"
+                >
+                  View Work
+                </a>
+              </MagneticButton>
+              <MagneticButton>
+                <a
+                  href="#contact"
+                  className="inline-block px-10 py-4 rounded-full border border-slate-700 bg-obsidian-light/50 text-white font-medium hover:bg-obsidian-light hover:border-slate-500 transition-all duration-300 backdrop-blur-md"
+                >
+                  Get in Touch
+                </a>
+              </MagneticButton>
             </div>
           </motion.div>
         </div>

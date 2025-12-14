@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import FadeIn from "./components/FadeIn";
 import {
   PythonIcon, JavaScriptIcon, CppIcon, JavaIcon,
   BrainIcon, FireIcon, LockIcon, BookIcon,
@@ -59,28 +60,21 @@ export default function Skills() {
   return (
     <section id="skills" className="py-24 px-6 relative bg-obsidian-light/30">
       <div className="max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
-        >
+        <FadeIn className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 font-display text-white">
             Technical <span className="text-gradient-gold">Expertise</span>
           </h2>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto font-light">
             A comprehensive overview of my technical capabilities and proficiency levels.
           </p>
-        </motion.div>
+        </FadeIn>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {Object.entries(skills).map(([category, items], categoryIndex) => (
-            <motion.div
+            <FadeIn
               key={category}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ delay: categoryIndex * 0.1, duration: 0.5 }}
-              className="relative"
+              delay={categoryIndex * 0.1}
+              className="h-full"
             >
               <div className="glass-card p-6 rounded-2xl border border-white/5 hover:border-gold-primary/30 transition-all duration-300 h-full group hover:-translate-y-1">
                 <h3 className="text-xl font-bold text-white mb-6 flex items-center gap-2">
@@ -113,7 +107,7 @@ export default function Skills() {
                   })}
                 </div>
               </div>
-            </motion.div>
+            </FadeIn>
           ))}
         </div>
       </div>
