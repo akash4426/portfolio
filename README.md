@@ -1,6 +1,6 @@
 <div align="center">
 
-  # ⚡️ Akash Karri | Next-Gen Portfolio
+  # Akash Karri | Next-Gen Portfolio
   
   <p align="center">
     <b>Designing the future of Intelligence and Security</b>
