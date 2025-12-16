@@ -30,7 +30,7 @@ export default function About() {
                 <h3 className="text-3xl font-bold text-white mb-2 font-display">Akash Karri</h3>
                 <p className="text-gold-primary font-medium tracking-wide uppercase text-sm mb-4">AI & Security Engineer</p>
                 <div className="flex gap-2">
-                  <span className="px-3 py-1 rounded-full bg-white/5 text-xs text-slate-400 border border-white/5">Hyderabad, IN</span>
+                  <span className="px-3 py-1 rounded-full bg-white/5 text-xs text-slate-400 border border-white/5">Visakhapatnam, IN</span>
                   <span className="px-3 py-1 rounded-full bg-white/5 text-xs text-slate-400 border border-white/5">Open to Work</span>
                 </div>
               </div>
