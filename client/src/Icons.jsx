@@ -369,3 +369,19 @@ export const FlowerIcon = () => (
         <circle cx="17" cy="17" r="2" fill="#F47F24" fillOpacity="0.4" />
     </svg>
 );
+
+export const XGBoostIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2Z" fill="#152737" />
+        <path d="M12 4V20M4 12H20" stroke="#25C2A0" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+        <rect x="7" y="7" width="10" height="10" rx="1" stroke="#25C2A0" strokeWidth="2" fill="none" transform="rotate(45 12 12)" />
+    </svg>
+);
+
+export const StreamlitIcon = () => (
+    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+        <path d="M12 2L4 12L12 22L20 12L12 2Z" fill="#FF4B4B" />
+        <path d="M12 6L7 12L12 18L17 12L12 6Z" fill="white" fillOpacity="0.2" />
+        <path d="M12 9L9.5 12L12 15L14.5 12L12 9Z" fill="white" />
+    </svg>
+);

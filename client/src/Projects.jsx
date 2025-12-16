@@ -6,7 +6,8 @@ import {
   PythonIcon, ReactIcon, PyTorchIcon,
   ClipIcon, GeminiIcon, FastApiIcon, RagIcon,
   EmbeddingsIcon, TailwindIcon, FramerMotionIcon,
-  FlowerIcon, ShieldIcon, LightningIcon
+  FlowerIcon, ShieldIcon, LightningIcon,
+  XGBoostIcon, StreamlitIcon
 } from "./Icons";
 
 const techIcons = {
@@ -22,7 +23,10 @@ const techIcons = {
   "Framer Motion": FramerMotionIcon,
   "Flower": FlowerIcon,
   "Machine Learning": LightningIcon,
-  "Security": ShieldIcon
+  "Machine Learning": LightningIcon,
+  "Security": ShieldIcon,
+  "XGBoost": XGBoostIcon,
+  "Streamlit": StreamlitIcon
 };
 
 const projects = [
@@ -65,6 +69,15 @@ const projects = [
     link: "https://github.com/akash4426/Phishing_Links",
     image: "/images/projects/threat-detection-v2.png",
     category: "Security"
+  },
+
+  {
+    title: "SDN – Self-Healing Network",
+    description: "A Self-Healing SDN System utilizing XGBoost for real-time DDoS attack detection and PPO Reinforcement Learning for autonomous mitigation actions.",
+    tech: ["Python", "XGBoost", "Streamlit", "Machine Learning"],
+    link: "https://github.com/akash4426/SDN",
+    image: "/images/projects/sdn-project.png",
+    category: "AI Security"
   },
 ];
 
