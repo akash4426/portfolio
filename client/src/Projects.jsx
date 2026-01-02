@@ -23,7 +23,6 @@ const techIcons = {
   "Framer Motion": FramerMotionIcon,
   "Flower": FlowerIcon,
   "Machine Learning": LightningIcon,
-  "Machine Learning": LightningIcon,
   "Security": ShieldIcon,
   "XGBoost": XGBoostIcon,
   "Streamlit": StreamlitIcon
