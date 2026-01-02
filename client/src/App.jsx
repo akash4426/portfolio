@@ -17,7 +17,7 @@ export default function App() {
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "50%"]);
 
   const techStack = [
-    "Machine Learning", "Cybersecurity", "React", "Python", "TensorFlow", "Cryptography", "FastAPI", "TailwindCSS", "Framer Motion", "Docker", "AWS"
+    "Machine Learning", "Cybersecurity", "React", "Python", "TensorFlow", "Cryptography", "FastAPI", "TailwindCSS", "Framer Motion", "Docker"
   ];
 
   return (

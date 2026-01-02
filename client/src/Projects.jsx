@@ -47,12 +47,12 @@ const projects = [
     category: "NLP"
   },
   {
-    title: "Portfolio V2",
-    description: "Advanced personal portfolio featuring glassmorphism, AI-driven aesthetic, and system-level animations built with React and Framer Motion.",
-    tech: ["React", "Tailwind", "Framer Motion"],
-    link: "#",
-    image: "/images/projects/portfolio-v2.png",
-    category: "Web Dev"
+    title: "Job Search assistant",
+    description: "AI-powered job search assistant that analyzes user profiles and job descriptions to recommend tailored job opportunities.",
+    tech: ["Python", "Machine Learning", "Streamlit"],
+    link: "https://jobspy-5x5qg9mwi9fdspreo4vzzg.streamlit.app/",
+    image: "/images/projects/job-search-assistant.png",
+    category: "AI Productivity"
   },
   {
     title: "Federated Learning System",
