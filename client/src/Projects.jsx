@@ -49,7 +49,7 @@ const projects = [
   {
     title: "Job Search assistant",
     description: "AI-powered job search assistant that analyzes user profiles and job descriptions to recommend tailored job opportunities.",
-    tech: ["Python", "Machine Learning", "Streamlit"],
+    tech: ["Python", "Jobspy", "Streamlit","Pandas","Web Scraping"],
     link: "https://jobspy-5x5qg9mwi9fdspreo4vzzg.streamlit.app/",
     image: "/images/projects/job-search-assistant.png",
     category: "AI Productivity"
