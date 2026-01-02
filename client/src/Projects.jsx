@@ -46,9 +46,15 @@ const projects = [
     category: "NLP"
   },
   {
-    title: "Job Search assistant",
-    description: "AI-powered job search assistant that analyzes user profiles and job descriptions to recommend tailored job opportunities.",
-    tech: ["Python", "Jobspy", "Streamlit","Pandas","Web Scraping"],
+    title: "ML-Powered Job Search Assistant",
+    description: "ML-powered job search assistant that uses NLP-based resume–job matching to analyze user profiles and job descriptions, ranking job opportunities by semantic relevance.",
+    tech: [
+      "Python",
+      "Streamlit",
+      "Sentence-BERT",
+      "Pandas",
+      "Web Scraping"
+    ],
     link: "https://jobspy-5x5qg9mwi9fdspreo4vzzg.streamlit.app/",
     image: "/images/projects/job-search-assistant.png",
     category: "AI Productivity"
