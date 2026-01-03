@@ -46,19 +46,21 @@ const projects = [
     category: "NLP"
   },
   {
-    title: "ML-Powered Job Search Assistant",
-    description: "ML-powered job search assistant that uses NLP-based resume–job matching to analyze user profiles and job descriptions, ranking job opportunities by semantic relevance.",
+    title: "GenAI-Enhanced Job Search & Recommendation System",
+    description: "GenAI-powered job search assistant that performs resume-aware job ranking using semantic embeddings and vector-based retrieval. The system converts resumes and job descriptions into dense embeddings and applies similarity search to rank job opportunities based on contextual relevance rather than keyword matching.",
     tech: [
       "Python",
       "Streamlit",
       "Sentence-BERT",
+      "FAISS",
       "Pandas",
       "Web Scraping"
     ],
     link: "https://jobspy-5x5qg9mwi9fdspreo4vzzg.streamlit.app/",
     image: "/images/projects/job-search-assistant.png",
-    category: "AI Productivity"
+    category: "GenAI / AI Productivity"
   },
+
   {
     title: "Federated Learning System",
     description: "Decentralized machine learning system for privacy-preserving AI, enabling collaborative model training without sharing raw data.",
