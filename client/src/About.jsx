@@ -21,7 +21,7 @@ export default function About() {
             <div className="h-full flex flex-col p-6">
               <div className="relative w-full aspect-square mb-6 rounded-2xl overflow-hidden border border-white/10">
                 <img
-                  src="/images/akash.jpeg"
+                  src="/images/akash.jpg"
                   alt="Akash Karri"
                   className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
                 />
