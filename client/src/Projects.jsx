@@ -50,13 +50,14 @@ const projects = [
     description: "GenAI-powered job search assistant that performs resume-aware job ranking using semantic embeddings and vector-based retrieval. The system converts resumes and job descriptions into dense embeddings and applies similarity search to rank job opportunities based on contextual relevance rather than keyword matching.",
     tech: [
       "Python",
-      "Streamlit",
+      "Docker",
+      "Railway",
       "Sentence-BERT",
       "FAISS",
       "Pandas",
       "Web Scraping"
     ],
-    link: "https://jobspy-5x5qg9mwi9fdspreo4vzzg.streamlit.app/",
+    link: "https://jobspy-genai-production.up.railway.app/",
     image: "/images/projects/job-search-assistant.png",
     category: "GenAI / AI Productivity"
   },
