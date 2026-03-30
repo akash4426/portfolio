@@ -57,7 +57,7 @@ const projects = [
       "Pandas",
       "Web Scraping"
     ],
-    link: "https://jobspy-genai-production.up.railway.app/",
+    link: "https://jobspy-5x5qg9mwi9fdspreo4vzzg.streamlit.app/",
     category: "GenAI / AI Productivity"
   },
 
