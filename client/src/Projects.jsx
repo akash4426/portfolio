@@ -42,7 +42,7 @@ const projects = [
     title: "Document RAG System",
     description: "Retrieval-Augmented Generation (RAG) system processing text and PDF documents. Extracts embeddings, stores in vector DB, and queries via FastAPI.",
     tech: ["Python", "FastAPI", "RAG", "Embeddings"],
-    link: "https://github.com/akash4426",
+    link: "https://github.com/akash4426/rag-system.git",
     category: "NLP"
   },
   {
@@ -65,7 +65,7 @@ const projects = [
     title: "Federated Learning System",
     description: "Decentralized machine learning system for privacy-preserving AI, enabling collaborative model training without sharing raw data.",
     tech: ["Python", "PyTorch", "Flower"],
-    link: "https://github.com/akash4426",
+    link: "https://github.com/akash4426/federated-threat-detection.git",
     category: "Privacy AI"
   },
   {
@@ -83,6 +83,13 @@ const projects = [
     link: "https://github.com/akash4426/SDN",
     category: "AI Security"
   },
+  {
+    title: "LLM-Powered SOC Analyst",
+    description: "Developed an AI-driven Security Operations Center (SOC) analyst that automatically investigates security logs by combining LSTM-based anomaly detection, Retrieval-Augmented Generation (RAG) using the MITRE ATT&CK framework, and a locally deployed LLM (Phi-3). The system reconstructs attack timelines, maps threats to MITRE techniques, and generates structured incident reports.",
+    tech: ["Python", "FastAPI", "RAG", "Machine Learning", "Security", "GenAI"],
+    link: "https://github.com/akash4426/LLM_Powered_SOC_ANALYST.git",
+    category: "AI Security"
+  }
 ];
 
 export default function Projects() {
