@@ -32,6 +32,14 @@ const techIcons = {
 
 const projects = [
   {
+    title: "LLM-Powered SOC Analyst",
+    description: "Developed an AI-driven Security Operations Center (SOC) analyst that automatically investigates security logs by combining LSTM-based anomaly detection, Retrieval-Augmented Generation (RAG) using the MITRE ATT&CK framework, and a locally deployed LLM (Phi-3). The system reconstructs attack timelines, maps threats to MITRE techniques, and generates structured incident reports.",
+    tech: ["Python", "FastAPI", "RAG", "Machine Learning", "Security", "GenAI"],
+    link: "https://github.com/akash4426/LLM_Powered_SOC_ANALYST.git",
+    category: "AI Security"
+  },
+
+  {
     title: "Video RAG System",
     description: "Multimodal Retrieval-Augmented Generation system extracting embeddings from video frames using CLIP and performing intelligent video-based QA using Gemini.",
     tech: ["CLIP", "Gemini", "Python", "FastAPI"],
@@ -82,14 +90,8 @@ const projects = [
     tech: ["Python", "XGBoost", "Streamlit", "Machine Learning"],
     link: "https://github.com/akash4426/SDN",
     category: "AI Security"
-  },
-  {
-    title: "LLM-Powered SOC Analyst",
-    description: "Developed an AI-driven Security Operations Center (SOC) analyst that automatically investigates security logs by combining LSTM-based anomaly detection, Retrieval-Augmented Generation (RAG) using the MITRE ATT&CK framework, and a locally deployed LLM (Phi-3). The system reconstructs attack timelines, maps threats to MITRE techniques, and generates structured incident reports.",
-    tech: ["Python", "FastAPI", "RAG", "Machine Learning", "Security", "GenAI"],
-    link: "https://github.com/akash4426/LLM_Powered_SOC_ANALYST.git",
-    category: "AI Security"
   }
+
 ];
 
 export default function Projects() {
