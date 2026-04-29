@@ -46,13 +46,13 @@ const projects = [
     link: "https://videorag-in9agcr2rynefnchvpwflz.streamlit.app/",
     category: "AI Research"
   },
-  {
-    title: "Document RAG System",
-    description: "Retrieval-Augmented Generation (RAG) system processing text and PDF documents. Extracts embeddings, stores in vector DB, and queries via FastAPI.",
-    tech: ["Python", "FastAPI", "RAG", "Embeddings"],
-    link: "https://github.com/akash4426/rag-system.git",
-    category: "NLP"
-  },
+{
+  title: "Hybrid RAG System for Intelligent Document Querying",
+  description: "Designed and implemented a production-style RAG pipeline for processing text and PDF documents using hybrid retrieval (TF-IDF + vector embeddings). Built a FastAPI backend for real-time querying with contextual responses, query expansion, and source attribution. Optimized retrieval and generation pipeline achieving sub-second retrieval latency and efficient end-to-end response handling.",
+  tech: ["Python", "FastAPI", "LangChain", "FAISS", "RAG", "Embeddings"],
+  link: "https://github.com/akash4426/rag-system.git",
+  category: "NLP"
+},
   {
     title: "GenAI-Enhanced Job Search & Recommendation System",
     description: "GenAI-powered job search assistant that performs resume-aware job ranking using semantic embeddings and vector-based retrieval. The system converts resumes and job descriptions into dense embeddings and applies similarity search to rank job opportunities based on contextual relevance rather than keyword matching.",
@@ -65,7 +65,7 @@ const projects = [
       "Pandas",
       "Web Scraping"
     ],
-    link: "https://jobspy-5x5qg9mwi9fdspreo4vzzg.streamlit.app/",
+    link: "https://jobspy-genai-latest.onrender.com/",
     category: "GenAI / AI Productivity"
   },
 
