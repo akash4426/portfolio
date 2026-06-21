@@ -24,7 +24,7 @@ export default function App() {
   ];
 
   return (
-    <div className="bg-obsidian text-slate-light overflow-hidden font-display relative" style={{ cursor: 'none' }}>
+    <div className="bg-obsidian text-slate-light overflow-hidden font-display relative">
       <div className="bg-noise"></div>
 
       {/* Scroll Progress Bar */}
