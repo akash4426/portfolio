@@ -37,14 +37,35 @@ export default function Contact() {
   };
 
   const contactMethods = [
-    { icon: <EmailIcon />, label: "Email", value: "akashkarri2006@gmail.com", link: "mailto:akashkarri2006@gmail.com" },
-    { icon: <LinkedInIcon />, label: "LinkedIn", value: "kakashreddy", link: "https://www.linkedin.com/in/kakashreddy" },
-    { icon: <GitHubIcon />, label: "GitHub", value: "akash4426", link: "https://github.com/akash4426" },
+    {
+      icon: <EmailIcon />,
+      label: "Email",
+      value: "akashkarri2006@gmail.com",
+      link: "mailto:akashkarri2006@gmail.com",
+      color: "#4FC3F7"
+    },
+    {
+      icon: <LinkedInIcon />,
+      label: "LinkedIn",
+      value: "kakashreddy",
+      link: "https://www.linkedin.com/in/kakashreddy",
+      color: "#0A66C2"
+    },
+    {
+      icon: <GitHubIcon />,
+      label: "GitHub",
+      value: "akash4426",
+      link: "https://github.com/akash4426",
+      color: "#a855f7"
+    },
   ];
 
   return (
-    <section id="contact" className="py-24 px-6 relative bg-obsidian-light/30">
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="py-24 px-6 relative overflow-hidden" style={{ background: "rgba(10, 15, 26, 0.3)" }}>
+      <div className="absolute inset-0 gradient-mesh opacity-30 pointer-events-none"></div>
+      <div className="absolute inset-0 neural-grid opacity-20 pointer-events-none"></div>
+
+      <div className="max-w-4xl mx-auto relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -59,7 +80,8 @@ export default function Contact() {
           </p>
         </motion.div>
 
-        <div className="grid md:grid-cols-3 gap-8 mb-12">
+        {/* Contact Method Cards */}
+        <div className="grid md:grid-cols-3 gap-6 mb-10">
           {contactMethods.map((item, index) => (
             <motion.a
               key={index}
@@ -69,40 +91,65 @@ export default function Contact() {
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1, duration: 0.5 }}
-              whileHover={{ y: -5 }}
-              className="glass-card p-8 rounded-2xl border border-white/5 hover:border-gold-primary/30 transition-all text-center group bg-obsidian"
+              whileHover={{ y: -6, scale: 1.02 }}
+              className="glass-card p-7 rounded-2xl border border-white/5 hover:border-white/15 transition-all text-center group"
+              style={{ background: "rgba(10, 15, 26, 0.6)" }}
             >
-              <div className="flex justify-center mb-4 group-hover:scale-110 transition-transform text-white group-hover:text-gold-primary">{item.icon}</div>
-              <div className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">{item.label}</div>
-              <div className="text-white text-sm truncate font-medium">{item.value}</div>
+              <div
+                className="flex justify-center mb-4 group-hover:scale-110 transition-transform"
+                style={{ color: item.color }}
+              >
+                {item.icon}
+              </div>
+              <div className="text-slate-500 text-xs font-bold uppercase tracking-wider mb-2">
+                {item.label}
+              </div>
+              <div className="text-white text-sm truncate font-medium">
+                {item.value}
+              </div>
+              {/* Bottom accent line */}
+              <div
+                className="h-0.5 w-0 group-hover:w-full mt-4 mx-auto transition-all duration-500 rounded-full"
+                style={{ background: `linear-gradient(90deg, transparent, ${item.color}, transparent)` }}
+              />
             </motion.a>
           ))}
         </div>
 
+        {/* Contact Form */}
         <motion.form
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7 }}
           className="glass-card p-8 md:p-12 rounded-3xl border border-white/5 relative overflow-hidden"
+          style={{ background: "rgba(10, 15, 26, 0.6)" }}
           onSubmit={handleSubmit}
         >
-          {/* Subtle Accent Line */}
-          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold-primary to-gold-dim"></div>
+          {/* Top Accent Line */}
+          <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-gold-primary via-cyber to-accent-purple"></div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-8">
+          <div className="grid md:grid-cols-2 gap-6 mb-6">
             <div>
-              <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Name</label>
+              <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                Name
+              </label>
               <input
                 name="name"
                 onChange={update}
                 value={form.name}
                 required
                 placeholder="John Doe"
-                className="w-full p-4 rounded-xl bg-obsidian border border-white/10 text-white placeholder-slate-600 focus:border-gold-primary focus:ring-1 focus:ring-gold-primary outline-none transition-all"
+                className="w-full p-4 rounded-xl text-white placeholder-slate-600 outline-none transition-all input-glow"
+                style={{
+                  background: "#030712",
+                  border: "1px solid rgba(255,255,255,0.1)"
+                }}
               />
             </div>
             <div>
-              <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Email</label>
+              <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+                Email
+              </label>
               <input
                 name="email"
                 type="email"
@@ -110,51 +157,75 @@ export default function Contact() {
                 value={form.email}
                 required
                 placeholder="john@example.com"
-                className="w-full p-4 rounded-xl bg-obsidian border border-white/10 text-white placeholder-slate-600 focus:border-gold-primary focus:ring-1 focus:ring-gold-primary outline-none transition-all"
+                className="w-full p-4 rounded-xl text-white placeholder-slate-600 outline-none transition-all input-glow"
+                style={{
+                  background: "#030712",
+                  border: "1px solid rgba(255,255,255,0.1)"
+                }}
               />
             </div>
           </div>
 
           <div className="mb-8">
-            <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Message</label>
+            <label className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
+              Message
+            </label>
             <textarea
               name="message"
               onChange={update}
               value={form.message}
-              rows="6"
+              rows="5"
               required
               placeholder="Tell me about your project..."
-              className="w-full p-4 rounded-xl bg-obsidian border border-white/10 text-white placeholder-slate-600 focus:border-gold-primary focus:ring-1 focus:ring-gold-primary outline-none transition-all resize-none"
+              className="w-full p-4 rounded-xl text-white placeholder-slate-600 outline-none transition-all resize-none input-glow"
+              style={{
+                background: "#030712",
+                border: "1px solid rgba(255,255,255,0.1)"
+              }}
             ></textarea>
           </div>
 
-          <button
+          <motion.button
             type="submit"
             disabled={status === "sending"}
-            className={`w-full p-4 rounded-xl font-bold uppercase tracking-widest transition-all duration-300 ${status === "sending"
-              ? "bg-slate-800 text-slate-500 cursor-not-allowed"
-              : "bg-gold-primary text-obsidian hover:bg-gold-light hover:shadow-gold"
-              }`}
+            whileHover={status !== "sending" ? { scale: 1.02 } : {}}
+            whileTap={status !== "sending" ? { scale: 0.98 } : {}}
+            className="w-full p-4 rounded-xl font-bold uppercase tracking-widest transition-all duration-300 relative overflow-hidden btn-shine"
+            style={{
+              background: status === "sending" ? "#1e293b" : "linear-gradient(135deg, #f59e0b, #fbbf24)",
+              color: status === "sending" ? "#64748b" : "#030712",
+              cursor: status === "sending" ? "not-allowed" : "pointer",
+            }}
           >
-            {status === "sending" ? "Sending..." : "Send Message"}
-          </button>
+            {status === "sending" ? "Sending..." : "Send Message →"}
+          </motion.button>
 
           {status === "success" && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-6 p-4 rounded-xl bg-green-500/10 border border-green-500/30 text-green-500 text-center font-bold text-sm"
+              className="mt-6 p-4 rounded-xl border text-center font-bold text-sm"
+              style={{
+                background: "rgba(16, 185, 129, 0.1)",
+                borderColor: "rgba(16, 185, 129, 0.3)",
+                color: "#10b981"
+              }}
             >
-              Message sent successfully. I'll get back to you soon.
+              ✅ Message sent! I'll get back to you soon.
             </motion.div>
           )}
           {status === "error" && (
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="mt-6 p-4 rounded-xl bg-red-500/10 border border-red-500/30 text-red-500 text-center font-bold text-sm"
+              className="mt-6 p-4 rounded-xl border text-center font-bold text-sm"
+              style={{
+                background: "rgba(239, 68, 68, 0.1)",
+                borderColor: "rgba(239, 68, 68, 0.3)",
+                color: "#ef4444"
+              }}
             >
-              Something went wrong. Please try again or email me directly.
+              ❌ Something went wrong. Please try again or email me directly.
             </motion.div>
           )}
         </motion.form>

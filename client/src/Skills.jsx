@@ -2,10 +2,10 @@ import { motion } from "framer-motion";
 import FadeIn from "./components/FadeIn";
 import Spotlight from "./components/Spotlight";
 import {
-  PythonIcon, JavaScriptIcon, CppIcon, JavaIcon,
-  BrainIcon, FireIcon, LockIcon, BookIcon,
+  PythonIcon, JavaScriptIcon, CppIcon,
+  BrainIcon, FireIcon, LockIcon,
   ReactIcon, NodeIcon, MongoIcon, LightningIcon,
-  ShieldIcon, SearchIcon, DockerIcon, GitIcon,
+  ShieldIcon, DockerIcon,
   TensorFlowIcon, PyTorchIcon, KerasIcon, ScikitLearnIcon,
   ExpressIcon, SQLIcon, NetworkSecurityIcon, EthicalHackingIcon,
   CryptographyIcon, ThreatAnalysisIcon
@@ -28,6 +28,13 @@ const skillIcons = {
   "JavaScript": JavaScriptIcon,
   "C++": CppIcon,
   "SQL": SQLIcon,
+};
+
+const categoryColors = {
+  "AI & ML": "#f59e0b",
+  "Cybersecurity": "#00ffd5",
+  "Full Stack dev": "#8b5cf6",
+  "Programming": "#0ea5e9",
 };
 
 const skills = {
@@ -59,11 +66,12 @@ const skills = {
 
 export default function Skills() {
   return (
-    <section id="skills" className="py-24 px-6 relative bg-obsidian-light/30 overflow-hidden">
+    <section id="skills" className="py-24 px-6 relative overflow-hidden" style={{ background: "rgba(10, 15, 26, 0.3)" }}>
       {/* Animated background elements */}
-      <div className="absolute inset-0 gradient-mesh opacity-30"></div>
-      <div className="absolute top-20 left-10 w-64 h-64 bg-cyber/5 rounded-full blur-3xl animate-pulse-slow"></div>
-      <div className="absolute bottom-20 right-10 w-64 h-64 bg-cyber-glow/5 rounded-full blur-3xl animate-pulse-slow" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute inset-0 gradient-mesh opacity-30 pointer-events-none"></div>
+      <div className="absolute inset-0 neural-grid opacity-15 pointer-events-none"></div>
+      <div className="absolute top-20 left-10 w-64 h-64 bg-cyber/5 rounded-full blur-3xl animate-pulse-slow pointer-events-none"></div>
+      <div className="absolute bottom-20 right-10 w-64 h-64 bg-accent-purple/5 rounded-full blur-3xl animate-pulse-slow pointer-events-none" style={{ animationDelay: '2s' }}></div>
 
       <div className="max-w-7xl mx-auto">
         <FadeIn className="text-center mb-16">
@@ -88,73 +96,90 @@ export default function Skills() {
         </FadeIn>
 
         <Spotlight className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 group">
-          {Object.entries(skills).map(([category, items], categoryIndex) => (
-            <FadeIn
-              key={category}
-              delay={categoryIndex * 0.1}
-              className="h-full"
-            >
-              <motion.div
-                className="glass-card p-6 rounded-2xl border border-white/5 hover:border-gold-primary/30 transition-all duration-300 h-full group/card hover:-translate-y-2 bg-obsidian/50 card-lift"
-                whileHover={{ scale: 1.03 }}
+          {Object.entries(skills).map(([category, items], categoryIndex) => {
+            const accentColor = categoryColors[category] || "#f59e0b";
+            return (
+              <FadeIn
+                key={category}
+                delay={categoryIndex * 0.1}
+                className="h-full"
               >
-                <motion.h3
-                  className="text-xl font-bold text-white mb-6 flex items-center gap-2"
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  transition={{ delay: categoryIndex * 0.1 + 0.2 }}
+                <motion.div
+                  className="glass-card p-6 rounded-2xl border border-white/5 hover:border-white/15 transition-all duration-300 h-full group/card"
+                  whileHover={{ scale: 1.03, y: -6 }}
+                  style={{ background: "rgba(10, 15, 26, 0.5)" }}
                 >
-                  <motion.span
-                    className="w-1.5 h-6 bg-gold-primary rounded-full"
-                    initial={{ scaleY: 0 }}
-                    whileInView={{ scaleY: 1 }}
-                    transition={{ delay: categoryIndex * 0.1 + 0.3, duration: 0.5 }}
-                  ></motion.span>
-                  {category}
-                </motion.h3>
+                  {/* Category header with accent bar */}
+                  <motion.h3
+                    className="text-xl font-bold text-white mb-6 flex items-center gap-2"
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    transition={{ delay: categoryIndex * 0.1 + 0.2 }}
+                  >
+                    <motion.span
+                      className="w-1.5 h-6 rounded-full"
+                      style={{ background: accentColor }}
+                      initial={{ scaleY: 0 }}
+                      whileInView={{ scaleY: 1 }}
+                      transition={{ delay: categoryIndex * 0.1 + 0.3, duration: 0.5 }}
+                    ></motion.span>
+                    {category}
+                  </motion.h3>
 
-                <div className="space-y-5">
-                  {items.map((skill, index) => {
-                    const Icon = skillIcons[skill.name] || LightningIcon;
-                    return (
-                      <motion.div
-                        key={index}
-                        className="relative"
-                        initial={{ opacity: 0, x: -10 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ delay: categoryIndex * 0.15 + index * 0.1 + 0.3 }}
-                        whileHover={{ x: 5 }}
-                      >
-                        <div className="flex justify-between text-sm mb-1.5">
-                          <span className="text-slate-300 flex items-center gap-2 font-medium">
-                            <span className="icon-bounce inline-block"><Icon /></span>
-                            {skill.name}
-                          </span>
-                          <span className="text-gold-primary font-mono text-xs opacity-0 group-hover/card:opacity-100 transition-opacity duration-300">
-                            {skill.level}%
-                          </span>
-                        </div>
-                        <div className="h-2 w-full bg-obsidian rounded-full overflow-hidden border border-white/5">
-                          <motion.div
-                            initial={{ width: 0 }}
-                            whileInView={{ width: `${skill.level}%` }}
-                            transition={{
-                              duration: 1.2,
-                              delay: categoryIndex * 0.15 + index * 0.1 + 0.5,
-                              ease: "easeOut"
-                            }}
-                            className="h-full bg-gradient-to-r from-gold-primary to-cyber-blue relative"
-                          >
-                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shimmer-effect"></div>
-                          </motion.div>
-                        </div>
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </motion.div>
-            </FadeIn>
-          ))}
+                  <div className="space-y-5">
+                    {items.map((skill, index) => {
+                      const Icon = skillIcons[skill.name] || LightningIcon;
+                      return (
+                        <motion.div
+                          key={index}
+                          className="relative"
+                          initial={{ opacity: 0, x: -10 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          transition={{ delay: categoryIndex * 0.15 + index * 0.1 + 0.3 }}
+                          whileHover={{ x: 5 }}
+                        >
+                          <div className="flex justify-between text-sm mb-1.5">
+                            <span className="text-slate-300 flex items-center gap-2 font-medium">
+                              <span
+                                className="icon-bounce inline-flex items-center justify-center flex-shrink-0 overflow-hidden"
+                                style={{ width: 16, height: 16 }}
+                              >
+                                <span style={{ transform: 'scale(0.5)', transformOrigin: 'center', display: 'inline-flex' }}>
+                                  <Icon />
+                                </span>
+                              </span>
+                              {skill.name}
+                            </span>
+                            <span
+                              className="font-mono text-xs opacity-0 group-hover/card:opacity-100 transition-opacity duration-300"
+                              style={{ color: accentColor }}
+                            >
+                              {skill.level}%
+                            </span>
+                          </div>
+                          <div className="h-1.5 w-full rounded-full overflow-hidden border border-white/5" style={{ background: "#030712" }}>
+                            <motion.div
+                              initial={{ width: 0 }}
+                              whileInView={{ width: `${skill.level}%` }}
+                              transition={{
+                                duration: 1.2,
+                                delay: categoryIndex * 0.15 + index * 0.1 + 0.5,
+                                ease: "easeOut"
+                              }}
+                              className="h-full relative overflow-hidden rounded-full"
+                              style={{ background: `linear-gradient(90deg, ${accentColor}, ${accentColor}80)` }}
+                            >
+                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent shimmer-effect"></div>
+                            </motion.div>
+                          </div>
+                        </motion.div>
+                      );
+                    })}
+                  </div>
+                </motion.div>
+              </FadeIn>
+            );
+          })}
         </Spotlight>
       </div>
     </section>

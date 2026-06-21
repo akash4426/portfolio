@@ -12,21 +12,21 @@ export default function Footer() {
   ];
 
   return (
-    <footer className="relative bg-obsidian border-t border-white/5 py-12 overflow-hidden">
-      <div className="absolute inset-0 bg-pattern opacity-50"></div>
+    <footer className="relative border-t border-white/5 py-12 overflow-hidden" style={{ background: "#030712" }}>
+      <div className="absolute inset-0 bg-pattern opacity-50 pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-12">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-8 mb-10">
           <div className="text-center md:text-left">
-            <h3 className="text-2xl font-bold text-white mb-2 font-display">
+            <h3 className="text-2xl font-bold text-white mb-1 font-display">
               Akash Karri
             </h3>
             <p className="text-slate-500 text-sm max-w-xs">
-              Building the future of secure intelligence.
+              Building the future of secure intelligence. 🚀
             </p>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex gap-3">
             {socialLinks.map((social) => (
               <motion.a
                 key={social.name}
@@ -35,7 +35,18 @@ export default function Footer() {
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, scale: 1.1 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-12 h-12 flex items-center justify-center border border-white/10 bg-white/5 text-slate-400 hover:bg-gold-primary hover:text-obsidian transition-all rounded-full group"
+                className="w-12 h-12 flex items-center justify-center border border-white/10 bg-white/5 text-slate-400 hover:text-black transition-all rounded-full group"
+                style={{ '--hover-bg': '#f59e0b' }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#f59e0b';
+                  e.currentTarget.style.borderColor = '#f59e0b';
+                  e.currentTarget.style.color = '#030712';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'rgba(255,255,255,0.05)';
+                  e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)';
+                  e.currentTarget.style.color = '#94a3b8';
+                }}
                 title={social.name}
               >
                 <span className="text-xl group-hover:scale-110 transition-transform">{social.icon}</span>
@@ -60,11 +71,11 @@ export default function Footer() {
         <div className="h-px bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
 
         <div className="flex flex-col md:flex-row justify-between items-center text-xs text-slate-600 gap-4">
-          <p>
-            © {currentYear} Akash Karri. All rights reserved.
-          </p>
+          <p>© {currentYear} Akash Karri. All rights reserved.</p>
           <p className="flex items-center gap-2">
-            Designed & Built with <HeartIcon className="w-4 h-4 text-gold-primary fill-current" />
+            Designed & Built with{" "}
+            <HeartIcon className="w-4 h-4 text-gold-primary fill-current" />{" "}
+            using AI
           </p>
         </div>
       </div>

@@ -73,7 +73,7 @@ body {
   box-shadow: 0 0 30px rgba(0, 255, 213, 0.08);
 }
 
-/* ─── Text Gradient ─── */
+/* ─── Text Gradients ─── */
 .text-gradient-cyber {
   background: linear-gradient(135deg, #00ffd5 0%, #0ea5e9 50%, #a855f7 100%);
   -webkit-background-clip: text;
@@ -81,6 +81,24 @@ body {
   background-clip: text;
   background-size: 200% auto;
   animation: shimmer 6s ease-in-out infinite;
+}
+
+.text-gradient-gold {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 50%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shimmer 4s ease-in-out infinite;
+}
+
+.text-gradient-ai {
+  background: linear-gradient(135deg, #13FFAA 0%, #1E67C6 50%, #CE84CF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  background-size: 200% auto;
+  animation: shimmer 5s ease-in-out infinite;
 }
 
 @keyframes shimmer {
@@ -203,8 +221,8 @@ body {
 /* ─── Focus Ring ─── */
 input:focus, textarea:focus {
   outline: none;
-  border-color: #00ffd5 !important;
-  box-shadow: 0 0 0 1px rgba(0, 255, 213, 0.3);
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 0 1px rgba(245, 158, 11, 0.3);
 }
 
 /* ─── Mask Gradient ─── */
@@ -298,14 +316,13 @@ input:focus, textarea:focus {
     radial-gradient(at 0% 100%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
   filter: blur(40px);
 }
-.gradient-mesh {
-  background:
-    radial-gradient(at 40% 20%, rgba(0, 255, 213, 0.15) 0%, transparent 50%),
-    radial-gradient(at 80% 0%, rgba(14, 165, 233, 0.15) 0%, transparent 50%),
-    radial-gradient(at 0% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
-    radial-gradient(at 80% 50%, rgba(0, 255, 213, 0.1) 0%, transparent 50%),
-    radial-gradient(at 0% 100%, rgba(14, 165, 233, 0.1) 0%, transparent 50%);
-  filter: blur(40px);
+
+/* ─── AI Neural Grid ─── */
+.neural-grid {
+  background-image:
+    linear-gradient(rgba(0, 255, 213, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 255, 213, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
 }
 
 /* ─── Input Glow Animation ─── */
@@ -314,7 +331,7 @@ input:focus, textarea:focus {
 }
 
 .input-glow:focus {
-  box-shadow: 0 0 0 2px rgba(0, 255, 213, 0.2), 0 0 20px rgba(0, 255, 213, 0.1);
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.2), 0 0 20px rgba(245, 158, 11, 0.1);
 }
 
 /* ─── Button Shine Effect ─── */
@@ -388,10 +405,68 @@ input:focus, textarea:focus {
   left: 0;
   width: 0;
   height: 3px;
-  background: linear-gradient(90deg, #00ffd5, #0ea5e9);
+  background: linear-gradient(90deg, #f59e0b, #00ffd5);
   transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .title-underline:hover::after {
   width: 100%;
+}
+
+/* ─── AI Pulse Ring ─── */
+@keyframes ai-pulse {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
+
+.ai-pulse-ring {
+  animation: ai-pulse 2s ease-out infinite;
+}
+
+/* ─── Holographic Glow ─── */
+.holographic {
+  background: linear-gradient(135deg,
+    rgba(0, 255, 213, 0.1) 0%,
+    rgba(14, 165, 233, 0.1) 25%,
+    rgba(168, 85, 247, 0.1) 50%,
+    rgba(245, 158, 11, 0.1) 75%,
+    rgba(0, 255, 213, 0.1) 100%);
+  background-size: 300% 300%;
+  animation: holographic-shift 6s ease infinite;
+}
+
+@keyframes holographic-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ─── Neon Glow Text ─── */
+.neon-glow {
+  text-shadow: 0 0 10px rgba(0, 255, 213, 0.5), 0 0 20px rgba(0, 255, 213, 0.3), 0 0 40px rgba(0, 255, 213, 0.1);
+}
+
+/* ─── Animate Pulse Slow (for bg elements) ─── */
+.animate-pulse-slow {
+  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+/* ─── Bg Pattern ─── */
+.bg-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.02'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* ─── Shimmer Effect (for skill bars) ─── */
+.shimmer-effect {
+  animation: bar-shimmer 2s linear infinite;
+}
+
+@keyframes bar-shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
 }
