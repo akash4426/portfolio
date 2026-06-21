@@ -22,7 +22,7 @@ export default function Footer() {
               Akash Karri
             </h3>
             <p className="text-slate-500 text-sm max-w-xs">
-              Building the future of secure intelligence. 🚀
+              Building the future of secure intelligence.
             </p>
           </div>
 
